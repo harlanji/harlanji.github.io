@@ -166,6 +166,21 @@ prose:
           label: "Publish"
           help: "Check to publish post, uncheck to hide."
 
+jekyll-archives:
+  enabled: all
+  layouts:
+    year: year-archive
+    month: month-archive
+    day: day-archive
+    tag: tag-archive
+    category: category-archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year-:month/'
+    day: '/:year-:month-:day/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'
+
 gems:
   - jekyll-paginate
-
+  - jekyll-archives
