@@ -1,0 +1,10 @@
+---
+layout: post
+title: Meebo Does File Transfers & Amazon WS
+date: 2007-09-11
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Always on the cutting edge, <a href="http://mashable.com/2007/09/10/meebo-file-transfer/">Meebo does file transfers using Amazon WS</a>. Perhaps validation that the Soashable project is not crazy; we have been discussing that very thing since I became curious about EC2 after <a href="http://www.mn-linux.org/">TCLUG</a> announced a speaker from Amazon would be coming.<br /><br />It will be interesting to study their implementation, and whether they contributed any patches to GAIM. As usual, it's very possible with Jabber but may require some patches to the gateway components.<br /><br />With Jabber, it would be implemented by creating an AJAX server to receive file transfers and connect on behalf of the user (Jabber supports multiple resources) and initiate the transfer of the uploaded file to the target JID. This works regardless of which network the remote party may be on, since the gateway component handles translation between Jabber file transfer and the file transfer mechanism of the remote network.<br /><br />And of course with all of this running in the EC2 cloud, S3 would be there to store the files.</div>

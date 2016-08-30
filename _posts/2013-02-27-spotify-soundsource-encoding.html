@@ -1,0 +1,13 @@
+---
+layout: post
+title: spotify soundsource encoding
+date: '2013-02-27T08:55:00-08:00'
+tags:
+- hackerfair3
+tumblr_url: http://blog.devspan.com/post/44146843850/spotify-soundsource-encoding
+---
+<img src="/tumblr_files/tumblr_mivdxoMXdv1qa3yi0o1_1280.png"/><br/><p>There&#8217;s lot going on here. Pretty much it is the two ends actually talking to each other: the playlist/track library import + the sound source.</p>
+<p>I am encoding the track URI as base64+url. Originally I was going to do <a href="http://en.wikipedia.org/wiki/Base32#Advantages" target="_blank">base32</a>, but I was able to use QT&#8217;s library for the former whereas I&#8217;d have to do something else for the latter, so I rolled with it. It should be assumed to be opaque in the future though, this is just a hack that works.</p>
+<p>The filename encoder is setup to use the <a href="http://en.wikipedia.org/wiki/Base64#Implementations_and_history">URL-safe version of base64 encoding</a>&#8212;/tmp/{base64(spotify_link(track))}.spotify, when the import happens. <span>When load happens, we do the inverse operation to get the track from the .spotify filename. </span></p>
+<p><span>So what is happening in the black console, is I am trying to load the track /tmp/c38&#8230;spotify and it doesn&#8217;t exist. So I go to the white console and copy the hand-made .wav file to the expected .spotify file location and try again; presto!</span></p>
+<p>Next, I will write the .spotify (.wav) file header upon import with 0 length, and then upon creation of the SoundSourceSpotify I will queue a worker and block until it finishes; the worker would sp_session_player_play(track,1) and append the file, updating the headers when done. I know, blocking, HORRIFUCKIBLE, but this is the first iteration, bitch. I have some ideas to make this usable, maybe in time for hackerfair! but I need to think about presentation, too.</p>

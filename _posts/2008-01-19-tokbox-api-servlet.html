@@ -1,0 +1,10 @@
+---
+layout: post
+title: TokBox API + Servlet
+date: 2008-01-19
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+<a href="http://tokbox.com/">TokBox </a>is a free service that allows anyone to embed video chat in their website. For more advanced implementations, it offers an <a href="http://tokbox.com/view/developer">API</a> that allows any 3rd party site (with an API key) to register and query user accounts by email address and password. It is used as the voice and audio chat application on Meebo.<br /><br />I started adding video chat to Soashable the other day (surprise, surprise), and have made the fruits of my labor available as a stand-alone TokBox API wrapper and Servlet Maven artifact.<br /><br />To use, simply map the Servlet and make a GET request for /tokbox?op=getInfo&amp;jid=whateverjid. It will query TokBox for userId and widgetId of the given email address, and if it's not found it will register and return it. This allows you to not worry about it in your application, and just assume that that URL will always return the current user's TokBox info.<br /><br />Okay, so jid= is specific to jabber, but it works with any email address. If you don't like it, submit a patch :).<br /><br />Maven project site: <a href="http://labs.devspan.com/tokbox-servlet/">http://labs.devspan.com/tokbox-servlet/</a></div>

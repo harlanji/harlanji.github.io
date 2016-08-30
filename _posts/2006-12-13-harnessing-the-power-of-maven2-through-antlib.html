@@ -1,0 +1,10 @@
+---
+layout: post
+title: Harnessing The Power of Maven2 Through Antlib
+date: 2006-12-13
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Maven is a powerful platform, however it is unforgiving to existing projects developed outside of its archetypical, convention based paradigm. In the event of being constrained to the Ant platform by budget or other external forces, all hope is not lost. <a href="http://maven.apache.org/ant-tasks.html">Maven2's Antlib</a> is a set of Ant tasks that utilize bonafide Maven code.<br /><br />Antlib gives Ant projects many of the advantages of Maven in a non-imposing way. It can be used for things ranging in complexity from downloading JDBC drivers, to managing dependencies using a POM file, to full-on deployment of a compiled artifact and pom to a Maven repository--transitive dependencies and all.<br /><br />I have used this solution for two projects so-far, and could not be more happy with it. Gone are the days of manual dependency management by way of JARs in the CVS repository, in are the days of pom based dependency management for all projects, including legacy projects built using Ant.</div>

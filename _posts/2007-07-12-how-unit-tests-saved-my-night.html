@@ -1,0 +1,10 @@
+---
+layout: post
+title: How unit tests saved my night
+date: 2007-07-12
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Last night I started working on a new XMPP library for Javascript; I'll explain later ;).  Anyway, I was wrapping it up for the night, separating Javascript from the monolithic HTML file I was working in (because I'm Agile like that), when I accidentally deleted the bottom half of my code and saved without realizing (doh!).<br /><br />Tragic story, but the funny part is that I had unit tests for all the code I deleted, so within about 15 minutes I was able to re-build all lost functionality. My tests weren't fantastic, but they at least covered basic expectations of the methods' output.<br /><br />Unit tests FTW.</div>

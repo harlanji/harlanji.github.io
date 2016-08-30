@@ -1,0 +1,10 @@
+---
+layout: post
+title: "Update: Javascript XMPP and Data Plans"
+date: 2007-07-25
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Just a quick update:<br /><br />Over the past weeks I have been working on a new Jabber client written in Javascript. It will be a successor to <a href="http://zeank.in-berlin.de/jsjac/">JSJaC</a> in the Soashable project. The API is designed with <a href="http://www.igniterealtime.org/projects/smack/index.jsp">Smack</a> in mind, but deviates in that it uses DOM ubiquitously rather than building XML strings. However it is still designed such that one could implement a packet and simply override getNode() to create a new XML node on the fly.<br /><br />It is mostly unit tested, and lack of testability was a core reason for finally leaving JSJaC. The approach is to create a DummyXmppConnection, a subclass of XmppConnection that doesn't actually make Ajax requests, and test output queue (expected vs actual) and inject responses to test for events.<br /><br />I've also added a data plan to my cell phone service. My device is a <a href="http://www.t-mobile.com/shop/phones/Detail.aspx?device=8802ddeb-1ee4-477a-9608-d9cd1e2a903f">T-Mobile MDA</a> connecting via EDGE, and I get speeds of 100±30 kbps. From limited <a href="http://www.dslreports.com/mspeed">test runs</a>, it is a bit slower than the iPhone. I installed Opera Mobile and it seems to handle Ajax pretty welll; most tests for XMPP client pass, where they don't even run for IE mobile.<br /><br />I've got a lot of new ideas, and you can see where this is going :) I have more for you later.</div>

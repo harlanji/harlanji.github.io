@@ -1,0 +1,12 @@
+---
+layout: post
+title: Preserving TypeScript/CoffeeScript Source Map through UglifyJS.
+date: '2013-05-24T09:30:20-07:00'
+tags:
+- web development
+tumblr_url: http://blog.devspan.com/post/51232036670/preserving-typescript-coffeescript-source-map-through
+---
+<a href="https://github.com/mishoo/UglifyJS2#usage">Preserving TypeScript/CoffeeScript Source Map through UglifyJS.</a><br/><p><span>I was pleased to see that UglifyJS can transform the source map from TypeScript through to the Optimized JS:</span></p>
+<pre><code>--in-source-map    Input source map, useful if you're compressing JS that was
+                   generated from some other original code.</code></pre>
+<p><span>The motivator was that I am getting ready to compress JS/CSS in my project, but my JS is generated from TypeScript and I wanted to keep the Source Map. I hoped that there would be a way to carry it through the process, so I can debug all the way back to TypeScript. </span><span>I thought it should be pretty easy to do&#8212;in theory just one more transformation&#8212;and hoped that a tool existed to merge two source maps (ie. I wouldn&#8217;t have to write it)&#8230; it exists, and I&#8217;m pleased with UglifyJS!</span></p>

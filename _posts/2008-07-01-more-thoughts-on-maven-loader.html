@@ -1,0 +1,10 @@
+---
+layout: post
+title: More Thoughts on Maven Loader
+date: 2008-07-01
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Continuing the train of thought <a href="/2008/06/javascript-dependency-system-using.html">I started laying out last night</a>, I have some more details about the MavenLoader client module.<br /><br />The Maven JS Plugin could generate a Javascript file or replace a token in HTML files in war projects that sets up the MavenLoader in the way talked about yesterday automatically based on the war project's POM dependencies upon Javascript artifacts. I suppose this could also be a stand-alone plugin that operates on wars.<br /><br />There could also be a POM configuration option whether to prefer local copies of dependencies or ones from a specified repository (repopath). The code that expands the artifacts and rolls them up into YUI Loader format could be shared between the daemon and the Maven plugin.<br /><br />This would close the circle a little more for Maven developers but still not require Maven in order to take advantage of the system. It would also be a step toward building the YUI Test integration with the JS plugin that I want :)</div>

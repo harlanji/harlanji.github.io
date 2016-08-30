@@ -1,0 +1,10 @@
+---
+layout: post
+title: Soashable and XMPP4JS
+date: 2007-08-07
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Not much development in the past week, been busy with school work. But I did manage to reorganize Soashable a bit and pull the Jabber library out, <a href="http://soashable.googlecode.com/svn/trunk/javascripts/xmpp4js/">here</a>. I decided on the name xmpp4js.<br /><br />It's far from production-worthy, but at least it's out there now :). IMO it's a great library, but there is some suckiness that I wish could be overcome; namely the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">same origin policy</a>. Because of the policy one must set up a proxy on their web server (maybe firewall) to funnel http binding requests to the xep-0124 enabled jabber server, rather than connecting directly. There are no config examples in svn yet, but I can confirm that it works on both apache and lighttpd. I'll try to get those up soon.<br /><br />As far as Soashable itself, there have been some interesting developments on the planning side of things. We have a couple new faces who are interested in helping out, and there are some interesting talks about more business-y things. I've experienced a lot of feature creep, and in-lieu of this we had a meeting to lay down some milestones. I'll summarize those when they're a bit more finalized, but at this point we're looking at a full Meebo clone with some extra features in six months. Extra features will be added beyond that, and we hope it will catch on and get some outside development contributing as well.</div>

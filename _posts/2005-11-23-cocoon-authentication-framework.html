@@ -1,0 +1,10 @@
+---
+layout: post
+title: Cocoon Authentication Framework
+date: 2005-11-23
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+This may be a repeat from the documentation, but for my own reference here are the actions associated with the Cocoon Authentication Framework (CAF):<br /><br /><span style="font-weight: bold;">auth-login</span><br />This action attempts a login, it requires a username and optionally password to proceed; obviously it works like an action and you put the success page within the action and the failure page outside of it.<br /><br /><span style="font-weight: bold;">auth-loggedIn</span><br />This action will return true if a user is currently logged in to the CAF, and it is useful to put a redirect-to inside of for alternate views of pages. For example a landing page my have information about the service and a signup link, but redirect a user who is logged in to their home page.<br /><br /><span style="font-weight: bold;">auth-protect</span><br />This action will protect a page by requiring a user to be logged in to the CAF. It works like a normal action, nested map statements go within the action and are evaluated if there are valid credentials, and a redirect-to login page typically goes outside of it.<br /><br /><span style="font-weight: bold;">auth-logout</span><br />This action will log a user out of the CAF, in the example it is placed within an auth-protect but I'm not sure if it is required to be.<br /><br />Each of these actions requires the parameter "handler," it does not matter what the value is as long as it is the same for all areas.<br /><br />Look out soon for a Hibernate powered authentication writeup, as well as other Cocoon/Hibernate related articles.</div>

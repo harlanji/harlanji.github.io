@@ -1,0 +1,10 @@
+---
+layout: post
+title: Rails with SQLite
+date: 2007-06-25
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+It is ridiculously easy to <a href="http://wiki.rubyonrails.org/rails/pages/HowtoUseSQLite">setup SQLite with Rails</a>. So, I recommend it for n00bs just experimenting with Rails over PostgreSQL. My choice to try it out was based mostly on the fact that I have a locked down workstation at my job, and that PHP ships with it installed by default [<a href="http://www.sitepoint.com/article/coming-soon-webserver-near/3">1</a>][<a href="http://news.php.net/article.php?group=php.internals&article=2715">2</a>] (so it must be decent). It's to be determined whether I would run any class of production application using it for primary storage, but with Migrations it doesn't really matter since the DDL is not DBMS specific.<br /><br /><span style="font-style: italic;">Update:<br /><span style="font-style: italic;"><span style="font-style: italic;"></span></span></span>I ran into <a href="http://trac.edgewall.org/ticket/2598">this issue</a> and had to change ownership of both the db file and the containing directory to www-data.</div>

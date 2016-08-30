@@ -1,0 +1,31 @@
+---
+layout: post
+title: How to handle EmberJS actions with a nested VIew, rather than the parent Route.
+date: '2013-05-23T09:30:17-07:00'
+tags:
+- web development
+tumblr_url: http://blog.devspan.com/post/51155023761/how-to-handle-emberjs-actions-with-a-nested-view
+---
+<a href="http://stackoverflow.com/questions/11887836/handling-action-in-view-not-router">How to handle EmberJS actions with a nested VIew, rather than the parent Route.</a><br/><p>This isn&#8217;t hard or hacky, just confusing to a n00b. Views and Routes have events added to them differently, but the real trick is that actions don&#8217;t seem to hit the view from whom&#8217;s template they originated.</p>
+<p><strong>View</strong></p>
+<pre><code>App.RequestQuoteView = Ember.View.extend({
+  templateName: '_requestQuoteView',
+
+  sendRequest: function(e) {
+    alert("I should be triggered! from View.");
+  }
+
+  });</code></pre>
+<p><strong>Route</strong></p>
+<pre><code>App.ProjectRoute = Ember.Route.extend({
+  model: function() {
+    return {};
+  },<br/><br/><strong>events: {</strong>
+    // I am only here for illustration, and do not need to exist.<br/>    sendRequest: function(e) {
+      alert("I should not be triggered! from Route.");
+    }
+  }
+  });</code></pre>
+<p><strong>HTML</strong></p>
+<pre><code>&lt;button {{action sendRequest <strong>target="view"</strong>}} class="btn btn-primary btn-large"&gt;Send Request&lt;/button&gt;</code></pre>
+<p>This works because &#8216;view&#8217; is a valid property of the controller; an instance of RequestQuoteView. I do not fully understand how things are wired up in the hierarchy, but it seems pretty analogous to anything else with bubbling handlers. <a href="http://emberjs.com/guides/views/inserting-views-in-templates/">See this guide page</a>, under relative paths for some more info&#8212;though it&#8217;s fairly incomplete; maybe there is some better event documentation out there?</p>

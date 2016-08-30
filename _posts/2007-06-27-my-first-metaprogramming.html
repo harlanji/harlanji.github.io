@@ -1,0 +1,10 @@
+---
+layout: post
+title: My First Metaprogramming
+date: 2007-06-27
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+I just did my first <a href="http://www.devsource.com/article2/0,1895,1928561,00.asp">metaprogramming in Ruby</a> and it got my heart beating fast, thinking about the possibilities.<br /><br /><pre>module ApplicationHelper<br /> ApplicationController.class_eval do<br />   layout "standard-layout"<br /> end<br />end<br /></pre><br />This makes all ApplicationControllers use the <a href="http://www.onlamp.com/pub/a/onlamp/2005/03/03/rails.html?page=2">layout</a> "standard-layout", defined from a central location. The source of this string could be anything from a cookie to preferences stored on a model object, and obviously one would probably not apply it to ApplicationController indiscriminately; but the concept is fun :)<br /><br />Anoter example would be for a routeless static content controller:<br /><pre><br />class StaticController &lt; ApplicationController<br /> def method_missing(action)<br />   render :action =&gt; action.to_s<br /> end<br />end<br /></pre><br />This basically emulates having a method defined for any that is called and renders a template of same name using the rhtml file in the views directory. Again, maybe not the best way to have static content, but it's a fun idea.<br /><br />That is one thing that scares me about metaprogramming--without discipline and a concept of what's best vs. what's cool, an app can become hell very quickly.</div>

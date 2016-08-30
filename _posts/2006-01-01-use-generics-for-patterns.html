@@ -1,0 +1,10 @@
+---
+layout: post
+title: Use Generics For Patterns
+date: 2006-01-01
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+This evening I made a fun discovery in Java which I've never read about before (though surely it's been done, and was probably an intended use). It involves using generics and interface inheritance to ease (and enforce) the use of patterns.<br /><br /><span style="font-weight: bold;">Create a generic interface:</span><br /><pre><br />public interface DAO &lt;T,IdType&gt; {<br />   public IdType createOrUpdate( T object );<br />   public List&lt;T&gt; list();<br />   public T get( IdType id );<br />   public void delete( IdType id );<br />}<br /></pre><br /><br /><span style="font-weight: bold;">Create a business intrface derived from the generic:</span><br /><pre><br />public interface EventFacade extends DAO &lt;Event,Integer&gt; {<br />   ...<br />}<br /></pre><br /><br /><span style="font-weight: bold;">Implement the business object derived from the interface:</span><br /><pre><br />public class EventFacadeBean implements EventFacade {<br /><br />   public Integer createOrUpdate(Event event) {<br />       // TODO Auto-generated method stub<br />       return null;<br />   }<br /><br />   public Event get(Integer id) {<br />       // TODO Auto-generated method stub<br />       return null;<br />   }<br /><br />   public List<event> list() {<br />       // TODO Auto-generated method stub<br />       return null;<br />   }<br /><br />   public void delete(Integer id) {<br />       // TODO Auto-generated method stub<br />       return false;<br />   }<br /><br />   ...<br />}<br /></event></pre><br /><br />As you can see the DAO interface is no longer generic in the concrete implementation of the class. This makes maitenece a LOT less tedious and definitely helps with implementing "patterns."</div>

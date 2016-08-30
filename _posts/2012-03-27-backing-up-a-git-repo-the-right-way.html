@@ -1,0 +1,17 @@
+---
+layout: post
+title: Backing up a Git repo, the right way.
+date: '2012-03-27T13:43:00-07:00'
+tags:
+- git
+tumblr_url: http://blog.devspan.com/post/20022591756/backing-up-a-git-repo-the-right-way
+---
+<p>It&#8217;s pretty easy:</p>
+<blockquote>
+<p><a href="http://linux.die.net/man/1/git-bundle">git bundle</a> create /tmp/myproject.bundle &#8212;all</p>
+</blockquote>
+<p>This will bring all tags, branches, and heads along for the ride in a single file that can be archived without worry. To restore it, you simply clone from it:</p>
+<blockquote>
+<p>git clone /tmp/myproject.bundle</p>
+</blockquote>
+<p>That&#8217;s it! It should be possible to create incremental bundles as well, but I didn&#8217;t need that.</p>

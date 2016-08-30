@@ -1,0 +1,10 @@
+---
+layout: post
+title:  GnuPG
+date:   2014-09-01 18:19:00
+categories: privacy
+---
+
+Maybe you've heard of GPG, or is it PGP? You've probably heard a little more about NSA leaks and put the sloppy password management at work to the back of your mind. Your home password situation is probably not much better. How many passwords do you use for all your things? How often do you reset your password every time you need to use a service? I have an answer, and it wasn't easy to arrive at. It's still not perfect, but it's Pretty Good.
+
+[Should I write more? Leave a comment](https://github.com/harlanji/harlanji.github.io/issues/1).

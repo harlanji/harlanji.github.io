@@ -1,0 +1,10 @@
+---
+layout: post
+title: Hardware Scare
+date: 2007-07-04
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+The past few days have been loaded with heavy, intense development too time consuming to worry about piddly things like backup or version control. Just as I was preparing a sample of my app for a friend, my server shut down unexpectedly and wouldn't start back up. The most likely time for a failure to occur is when you are depending on the equipment the most. This is the third piece of hardware that has died in the past couple months. Perhaps I'm getting power spikes from the central air unit, or perhaps my server room (aka my bedroom closet) is getting too hot. Erring on the side of caution, I opted to replace the hardware and get a UPS for its power cleaning properties. I ended up going with an APC 650VA that should give me about an hour of battery time, send a signal via USB to my server, and $50k equipment and data protection, an added bonus.<br /><br />The machine ended up turning back on mysteriously after about fifteen minutes, so perhaps it was overheating. But now at least I have peace of mind knowing that the AC isn't going to blow away my hardware or data. I've also got added protection against data loss during power failures, since I am now running apcupsd which will shut my system down in event of a power failure and depletion of battery power.<br /><br />I was scared and frustrated by the vulnerability I felt when my machine died. Luckily I've already taken the proactive measure of using rsync to back up my data, so I am now as fault tolerant as ever.</div>

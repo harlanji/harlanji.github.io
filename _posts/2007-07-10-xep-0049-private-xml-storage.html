@@ -1,0 +1,10 @@
+---
+layout: post
+title: XEP-0049 - Private XML Storage
+date: 2007-07-10
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+I just implemented <a href="http://www.xmpp.org/extensions/xep-0049.html">XEP-0049</a> - Private XML Storage for my Jabber client (<a href="http://soashable.googlecode.com/svn/trunk/javascripts/DataStorage.js">source here</a>). What it does is allow a client to store arbitrary XML data in a given namespace and retrieve it using the same.<br /><br />To demonstrate a creative usage of it, I added an 'onconnect' event that will run any Javascript in 'soashable:userscript:event:signon'. Maybe stupid or dangerous; I haven't considered the implications carefully; but it's just a proof of concept.</div>

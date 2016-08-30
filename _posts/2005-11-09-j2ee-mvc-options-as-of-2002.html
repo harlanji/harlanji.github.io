@@ -1,0 +1,10 @@
+---
+layout: post
+title: J2EE MVC Options (as of 2002)
+date: 2005-11-09
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+I purchased a book, Expert One-On-One: J2EE Design and Development, that was spoken very highly of in Amazon's customer reviews. Chapter 12 explains the MVC (model-view-controller) pattern at length and outlines three open-source options for web application development using the MVC pattern.<br /><br /><span style="font-weight: bold;">Struts</span><br />Struts seems to lack any key strengths in the opinion of the author, with its key weakness being that applications are tied to Struts and Servlet API. It also contains peculiarities in the way it populates beans such as inability to be useful for non-string values, and its almost completely concrete implementation.<br /><br /><span style="font-weight: bold;">Maverick</span><br />Maverick's key strengths are its display-agnostic ViewContext interface and "domification" (conversion of a Bean to a DOM document). Domification allows for easy integration of XML-based transformation pipelines and display technologies such as XSLT. The pipeline and domification are conceptually similar to Apache's Cocoon project, which is not discussed in this book.<br /><br /><span style="font-weight: bold;">WebWork</span><br />WebWork is the framwork the author seems to look most favorably upon. Its key strengths are its agnostic approachs to model construction (not depending on anything but the ActionContext in most cases), bean population and presentation technology. However, some drawbacks are that it ties requests to the Command pattern which may be inappropriate for some requests, and the separation of action from the Servlet API may be unrealistic for more sophisticated user interaction.</div>

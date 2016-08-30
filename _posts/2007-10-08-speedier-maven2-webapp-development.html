@@ -1,0 +1,10 @@
+---
+layout: post
+title: Speedier Maven2 Webapp Development
+date: 2007-10-08
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Now that Soashable is ported to Maven, I want time savers because the change/compile/package/deploy/test cycle is way too slow. I did a bit of research and here's what I've found.<br /><br />Some goals that are useful alone or combined:<br /><br /><span style="font-weight: bold;"> war:inplace</span> - copies all dependencies into the webapp source, including overlays, classes (made with 'compile'), dependencies. See caveat below.<br /><span style="font-weight: bold;"> javascript:inplace</span> - copies javascript dependencies, the same way war:inplace works<br /><span style="font-weight: bold;"> jetty:run</span> - runs the inplace webapp; scanIntervalSeconds of 1 makes rapid 'testing' possible<br /><br />Using jetty:run in its own terminal requires no recompilation or packaging in order to see changes reflected in the running webapp, since it runs out of the source directory. A javascript:inplace or war:inplace in another terminal will copy any updated dependencies into place and work while the application is running.<br /><br />This method cuts several seconds off of the change/test cycle, from around 10 in any case to 5 or less for dependency changes, and immediate for local changes.<br /><br /><span style="font-style: italic;">The caveat</span> is that it copies dependencies into src/main/webapp, which might confuse some junior developers or perhaps make svn:ignore invaluable. A slightly slower alternative is to use war:exploded and jetty:run-exploded.<br /><br />Perhaps the best solution would be a hybrid resource resolver that first checks src/main/webapp and then falls back to the war:exploded target.</div>

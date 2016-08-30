@@ -1,0 +1,10 @@
+---
+layout: post
+title: Popoon Hijacked!
+date: 2005-11-07
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+<span style="font-style: italic;">Note: this article is a draft.</span><br /><br />I stole Popoon and made it run Blocks created for my system natively, and use the templates created for them natively as well.<br /><br />For those not familiar with Cocoon/Popoon, it is an implementation of MVC which uses pipelines to separate concerns of web applications. It was designed to use XML piplines to pass structured information between components, specifically actions, generators, transformers, and serializers.<br /><br />My existing Block engine does much the same thing, but in a different way; it uses the idea of context, and each component adds its data to the context in a place specified by its parent. It offers extreme flexibility, however I was in the market to revamp the configuration format and make it more MVC-like, as it is currently built off prototype code and I have used it enough that it's getting time to make things concrete.<br /><br />I have experience with Apache Cocoon and am quite impressed by the sitemap format in particular, however I am some doubts and gaps in my knowledge of its internals. I am also lacking any kind of design experience with Cocoon applications.<br /><br />.......<br /><br />Basically what I did was make Popoon's pipelines able to carry native PHP assoc arrays from generators to transformers. I wrote three simple components: block generator, phpassoc2xml and smarty transformers. Smarty takes an assoc array as an input, and my system currently uses Smarty templates for the display layer. So what I did was take code that works within my prototype engine and make it concrete within a more developed and stable engine. I may choose to transition away from blocks and smarty and toward generators and xslt, however with a few modifications I was able to hijack the entire popoon engine and make it run my existing code natively.</div>

@@ -1,0 +1,10 @@
+---
+layout: post
+title: JSLibBuilder
+date: 2007-08-29
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Unfortunately I've started yet another project to support development of Soashable--JSLibBuilder. Its purpose is to ease the creation of Javascript libraries, from development to testing to distribution packing. To use it, you create an Ant build file in your project's directory, create a few filesets, and import the jslibbuilder build file. It adds compile, jsunit, selenium and dist tasks to your projects build file, which then uses the filesets and things you have defined.<br /><br />It is packaged with JSUnit and will have Selenium soon, which frees your project of having to care about them. Simply put JSUnit and Selenium tests in a known spot and run the Ant script--easy. It also lets your JSUnit files use tokens, such as jsunit-dir and test-dir, so that you don't have to worry about absolute paths.<br /><br />The project isn't ready for a release, but it is in SVN in its current form. Beware, it has a lot of my workstation's paths hard-coded in. I'll try to make a release at some point; but if it sounds useful to you, feel free to do it for me :).</div>

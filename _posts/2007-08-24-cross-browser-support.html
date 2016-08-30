@@ -1,0 +1,10 @@
+---
+layout: post
+title: Cross Browser Support
+date: 2007-08-24
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Implementing cross browser support is bitch work. As if writing code that has full test coverage isn't enough work, now I have to go in and tweak it to work in 4+ different runtime environments.<br /><br />Safari for Windows seems to have the closest resemblance to Firefox (which I develop in), so it doesn't usually need much changed. Opera seems to tell me when I am doing something stupid to begin with, and so I change it and those changes generally work in FF and Safari. Sometimes though, like now, it gets very irritating trying to cooperate with Opera.<br /><br />I dread the day that I get around to the restoring IE compatibility. It's not that I'd purposely not support it, it's just a lot of work that I don't really want to do. Thank god for for all the unit tests I have written which will ensure regression when the task is undertaken. It gives me the idea to put "make this library IE compatible such that these tests pass in FF, IE6 and IE7" on RentACoder; that is, unless any of you want to do some bitch w...er, uh, help the project out :p.<br /><br />On a lighter note, today (here in MN) shaped up to be a FANTASTIC day to work out on the patio. A perfect 75 with low humidity. It looked like rain in the morning, but it's been a gorgeous, mostly sunny day today.</div>

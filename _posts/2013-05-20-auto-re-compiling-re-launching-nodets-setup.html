@@ -1,0 +1,21 @@
+---
+layout: post
+title: Auto re-compiling/re-launching NodeTS setup
+date: '2013-05-20T13:05:00-07:00'
+tags:
+- web development
+tumblr_url: http://blog.devspan.com/post/50928376122/auto-re-compiling-re-launching-nodets-setup
+---
+<p class="p1"><span>These are my steps that I&#8217;ve derived; if you have a better way, please let me know.</span></p>
+<p class="p1"><strong>d: dev box, s: server box:</strong></p>
+<ol class="ol1"><li class="li1">s: install NodeJS (via NVM), and &#8216;screen&#8217;</li>
+<li class="li1">s: create an empty directory: /path/to/app.</li>
+<li class="li1">s: npm install -g nodemon typescript</li>
+<li class="li1">d: create server.ts with simple &#8220;hello world&#8221; code in your local folder</li>
+<li class="li1">d: rsync -avz -e ssh ./* web@example.com:/path/to/app</li>
+<li class="li1">s: screen -RAd; need 2 windows (A, B)</li>
+<li class="li1">screen A: tsc -w server.ts</li>
+<li class="li1">screen B: nodemon server.js</li>
+<li class="li1">d: develop on server.ts, and rsync as needed. the full directory will sync!</li>
+</ol>
+<p>If there is interest I can make these steps more concrete. Interest?</p>

@@ -1,0 +1,17 @@
+---
+layout: post
+title: Migrating Continuous Integration to CloudBees
+date: '2012-03-29T01:12:50-07:00'
+tags:
+- ci
+- virtualization
+tumblr_url: http://blog.devspan.com/post/20109347181/migrating-continuous-integration-to-cloudbees
+---
+<p>Over the past day I&#8217;ve managed to port our CI system, including Jenkins and Nexus, to <a href="http://www.cloudbees.com/">CloudBees</a>. I&#8217;d not heard of it before, but it was highly recommended when I did a search for Hosted Jenkins. It is also free for projects with limited needs, so what the hell, I decided to give it a shot.</p>
+<p>Aside from a slight hangup initially, everything went extremely smoothly. The hangup was that the Jenkins account took about 30 minutes before I could access it.</p>
+<p><strong>So what are we getting? </strong></p>
+<p>I&#8217;m mostly using the DEV@cloud offering, which has hosted Nexus, Jenkins, and SCM with 2GB of space. This saves me effort of keeping these things up to date, and an $80/mo Rackspace Cloud instance (2GB memory). The free version includes only Jenkins build executor, but considering the size of my team this is okay&#8212;it also comes with support for 3 users, which is fine for now. A nice touch is unlimited Git/SVN repo hosting, which counts against the 2GB of disk space. Each of these things can also be public or private, making it a nice choice for FOSS projects.</p>
+<p>There is also a nice collection of services integrated. So-far I&#8217;ve used integrated <a href="https://mongohq.com/home">MongoHQ</a> hosting, which gives a free 16MB mongo instance that I can use for my automated integration tests. Which brings me to another awesome point: I was worried that my Maven build would be limited, being that I spawn up Jetty instances and connect to MongoDB during my IT phase&#8212;both work flawlessly! I&#8217;ll admit I saw skeptical and waiting for some insurmountable obstacle.</p>
+<p>Other nice features that I plan to try out in the near future are the free <a href="http://saucelabs.com/">SauceLabs</a> integration (cross-browser Selenium testing in the cloud!) and Sonar integration which is $20/mo (I am really coming to like this idea of paying to not having to deal with it).</p>
+<p>There are some other interesting services related to performance monitoring and logging that tie in with the RUN@cloud offering, but I&#8217;ll have to explore those options in greater depth later, for now I am quite happy with the DEV@cloud. </p>
+<p>I&#8217;ve only been using it for one day, so I can&#8217;t speak to the reliability / peak slowdown. But my impression is that this is a solid offering, particular considering I know the reputation of at least two people on their team (and have worked with one on a Maven plug-in). What did I say about 2012 holding exciting things for virtualized development systems? :)</p>

@@ -1,0 +1,10 @@
+---
+layout: post
+title: Grails (Groovy on Rails)
+date: 2007-06-26
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Last night I attended the <a href="http://ruby.mn/">MN Ruby Users</a>' Meeting. The topic of interest for me was Groovy on Grails, a Rails-inspired framework for the Java platform based on Spring, Hibernate, Ant+Ivy, SiteMesh and of course Groovy.<br /><br /><a href="http://groovy.codehaus.org/">Groovy</a> is a dynamic language that compiles to Java byte-code (unlike JRuby in its current state), and some of its most interesting features are closures and its ability to be used as a DSL. It also appears that there is a DSL for Ant, which I would guess is very Rake-like.<br /><br />The advantages of using Grails over Rails are real: many companies have existing Java infrastructure that they can not afford to simply throw out or run side-by-side with another infrastructure--<a href="http://www.iunknown.com/2007/06/steve-yegge-por.html">not even Google will run Rails</a>. There may also be the requirement of transactional (<a href="http://en.wikipedia.org/wiki/Java_Transaction_API">JTA/XA</a>) support, or the need to interact with legacy services using via ESB. As <a href="http://trac.devspan.com/entror/browser/trunk/EJBProcessPaymentClient/ejb.rb">I've explored before</a>, some of these things can indeed be used from Rails using the Java/Ruby Bridge, but that solution does not "seem" like it would hold up well in a high volume application (I've never done any stress testing, prove me wrong); though this still adds the burden of running two infrastructures side by side.<br /><br />So why not just stick with Servlets or Struts? As Scott Vlaminck put it in his presentation: the "let's knock this this shit out" attitude of the Rails community is coming onto the radar of 'enterprise' project management, and they want a piece of the uber-productivity pie that Rails boasts.<br /><br />Now if only we could convince them to use the time they'd save to give their developers five day weekends, or 150% raises :)</div>

@@ -1,0 +1,23 @@
+---
+layout: post
+title: Obstacles to getting started with Stage3D + Flex Mobile
+date: '2012-03-20T00:03:00-07:00'
+tags:
+- flex
+- air
+- 3d
+- mobile
+tumblr_url: http://blog.devspan.com/post/19618813815/obstacles-to-getting-started-with-stage3d-flex-mobile
+---
+<p>I was able to get a cross-platform mobile 3D solution working, and it wasn&#8217;t what I expected it to be. In my current task of creating a mobile application, I found AIR+Flex Mobile to be a pleasure to work with, using tools that I already had available to me. The ViewNavigator was very pleasant, and abstracted mobile &#8220;stack&#8221;-style navigation very well.</p>
+<p>Next on my list was 3D&#8212;would Stage3D pan out? As it turns out, AIR 3.1 (the latest) for mobile devices did not support it yet; how disappointing. Then I found out that 3.2 RC1 is released and is the first version that will support it. So here I am, at the cutting edge. Supposedly 3.2 will be out any minute now.</p>
+<p>So let&#8217;s get a start while we&#8217;re ahead of the game here, and be the first ones to beat down this path! I&#8217;ll assume that you&#8217;re using Flash Builder, but if you&#8217;re using Flash Develop I am sure similar instructions apply. I&#8217;ll also assume that you can google all of these things if you need more details, sorry I&#8217;m so lazy!</p>
+<p>To begin with, you&#8217;ll need to grab a copy of the Flash Builder 4.6, which is a free download to CS5.5 owners and includes the Flex 4.6 SDK. Next you&#8217;ll need to grab a copy of the AIR 3.2 RC1 SDK and overlay it onto the Flex 4.6 SDK. I recommend copying it to 4.6.0_AIR3.2RC1 and then extracting the AIR SDK on top of it, and creating a separate SDK location in FB. You&#8217;ll also need to download AIR 3.2 RC1 onto your mobile device(s). </p>
+<p>From here I&#8217;ll assume that you can figure out the Away3D samples and cobble together some code that should work. I&#8217;ll skip that part and just give you some pointers about things that I stumbled over.</p>
+<ul><li>Make sure you&#8217;re using Away3D 4.0, because it is a re-write for Flash 11 / Stage3D. It wasn&#8217;t immediately clear to me, since I&#8217;d never touched Flex and have little experience with Flash, and had no idea when Stage3D came around.</li>
+<li>Some people say you need to add -swf-version=15 to the compiler options and do some things with playerglobals.swc, but I don&#8217;t need to with Flex Builder 4.6/AIR 3.2 RC1 SDK&#8212;your mileage may vary.</li>
+<li>In order to use an Away3D instance on a Flex View, you need to set backgroundAlpha=&#8221;0&#8221; on its parent View.</li>
+<li>View3D is a Sprite and some people give really convoluted solutions to adding one to the View, like creating UIComponent wrappers. Ignore all of this, and just put it in a SpriteVisualElement!</li>
+<li>Some people give really convoluted solutions to setting the View3D size, also ignore it. Just set view.width / view.height, but make sure to assign them before you add it to the parent SpriteVisualElement. </li>
+<li>The problem that tripped me up most was removing the 3D context from the screen when I navigated to a new View. It would cause my application to stop working correctly and never recover, even if I went back home and back into my app&#8212;the only thing that fixed it was to re-install it from FB (via Run). Use view.dispose() from the Event.REMOVED_FROM_STAGE event of the View.</li>
+</ul><p>I may or may not post a simple skeleton project on GitHub, depending on interest.</p>

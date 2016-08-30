@@ -1,0 +1,19 @@
+---
+layout: post
+title: Spring 3.x FactoryBean
+date: '2011-10-24T12:13:02-07:00'
+tags:
+- java
+- spring
+tumblr_url: http://blog.devspan.com/post/11872321759/spring-3-x-factorybean
+---
+<p><span><a href="http://static.springsource.org/spring/docs/current/spring-framework-reference/html/beans.html">http://static.springsource.org/spring/docs/current/spring-framework-reference/html/beans.html</a></span></p>
+<blockquote>
+<p><span>When you need to ask a container for an actual <code class="interfacename">FactoryBean</code> instance itself, not the bean it produces, you preface the bean id with the ampersand symbol<code class="literal">&amp;</code> (without quotes) when calling the <code class="methodname">getBean()</code> method of the <code class="interfacename">ApplicationContext</code>. So for a given <code class="interfacename">FactoryBean</code> with an id of <code class="literal">myBean</code>, invoking<code class="literal">getBean("myBean")</code> on the container returns the product of the <code class="interfacename">FactoryBean</code>, and invoking <code class="literal">getBean("&amp;myBean")</code> returns the <code class="interfacename">FactoryBean</code> instance itself.</span></p>
+</blockquote>
+<p><a href="http://stackoverflow.com/questions/2830337/spring-factorybean-and-scopes-working-together">http://stackoverflow.com/questions/2830337/spring-factorybean-and-scopes-working-together</a></p>
+<blockquote>
+<p><span>
+<pre class="lang-java prettyprint"><code><span class="pun">&lt;</span><span class="pln">bean </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"x.y.z.TestFactoryBean"</span><span class="pln"> name</span><span class="pun">=</span><span class="str">"testFactory"</span><span class="pun">&gt;</span><span class="pln"><br/></span><span class="pun">&lt;</span><span class="pln">bean </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"x.y.z.TestBean"</span><span class="pln"> factory</span><span class="pun">-</span><span class="pln">bean</span><span class="pun">=</span><span class="str">"testFactory"</span><span class="pln"> <br/>      factory</span><span class="pun">-</span><span class="pln">method</span><span class="pun">=</span><span class="str">"getObject"</span><span class="pln"> scope</span><span class="pun">=</span><span class="str">"test"</span><span class="pln"> </span><span class="pun">/&gt;</span></code></pre>
+</span></p>
+</blockquote>

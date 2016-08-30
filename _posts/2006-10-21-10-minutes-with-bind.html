@@ -1,0 +1,10 @@
+---
+layout: post
+title: 10 Minutes With BIND
+date: 2006-10-21
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Today I decided to spend a little time getting a nameserver set up for my local network, because typing IP addresses is annoying. To my surprise, BIND is installed on FreeBSD systems by default so I got to forego that step and move straight to the juicy stuff.<br /><br />Configuration is extremely simple, at least for a basic configuration like mine. I dove into <a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/network-dns.html">this article</a> and followed along into my named.conf file:<br /><br />zone "example.net" {<br />    type master;<br />    file "master/example.net";<br />};<br /><br />zone "0.168.192.in-addr.arpa" {<br />    type master;<br />    file "master/0.168.192.in-addr.arpa";<br />};<br /><br /><br />This sets up two "zones": one for normal name lookups and one for reverse, IP lookups. I simply added a few hosts to each file and set my resolver to use the server.<br /><br />example.net:<br />...<br />; Machines<br />            IN      A       192.168.0.102<br />router          IN      A       192.168.0.1<br />zoidberg        IN      A       192.168.0.102<br />fry             IN      A       192.168.0.100<br /><br />; Aliases<br />www             IN      CNAME   @<br /><br /><br />0.168.192.in-addr.arpa:<br />...<br />1       IN      PTR     router.example.net.<br />100     IN      PTR     fry.example.net.<br />102     IN      PTR     zoidberg.example.net.<br /><br />Since I use DHCP, I had to find a way to use my new name server while not making my entire LAN dependent upon it as a result of pointing to it from my router. The solution is to add the following options to your /etc/dhclient.conf file:<br /><br />upersede domain-name "example.net";<br />#for the dns machine:<br />prepend domain-name-servers 127.0.0.1;<br /># for other clients:<br />prepend domain-name-servers 192.168.0.102;<br /><br /><br /><br />The result is that I can now use "nice" names on my local network.</div>

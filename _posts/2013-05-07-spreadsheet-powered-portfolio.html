@@ -1,0 +1,21 @@
+---
+layout: post
+title: Spreadsheet Powered Portfolio
+date: '2013-05-07T14:48:00-07:00'
+tags:
+- web development
+tumblr_url: http://blog.devspan.com/post/49881963411/spreadsheet-powered-portfolio
+---
+<p class="p1"><span class="s1">For the past few weeks I have been updating my frontend web skills. While building an EmberJS+Bootstrap based portfolio, I came across TimelineJS which loads data from Google Spreadsheets! It was the first time I had seen such a trick, and naturally I wanted to figure out how it works.</span></p>
+<p class="p1">I did some research and found that it&#8217;s as simple as making a JSONP request; just replace the cryptic portion of the URL below with your document&#8217;s key. Hint: your document&#8217;s key is the part between key=&#8230;&amp; in the address bar while you&#8217;re looking at the document.</p>
+<p><span>This translates pretty simply into this jQuery snippet:</span></p>
+<pre><code class="prettyprint">$.ajax({
+  url: "https://spreadsheets.google.com/feeds/cells/0AlNlwgTVXeETdEozaVRfZ0Itb0lvanZFMUFFTkg4RGc/od6/public/basic", 
+  data: {alt: "json-in-script"}, 
+  dataType: 'jsonp'}
+).then(function(resp) {
+</code>
+</pre>
+<p>From there, you can do as you wish with the cells in the response!</p>
+<p>A little more info:</p>
+<p class="p1"><span class="s1"><a href="https://developers.google.com/gdata/samples/spreadsheet_sample">https://developers.google.com/gdata/samples/spreadsheet_sample</a></span></p>

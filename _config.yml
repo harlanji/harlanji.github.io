@@ -4,8 +4,8 @@
 # baseurl is the website's URL without the hostname
 
 # If you are building a simple GitHub user page (http://username.github.io) then use these settings:
-url: "http://username.github.io"
-baseurl: ""
+url: "."
+#baseurl: "/"
 
 # If you are building a GitHub project page then use these settings:
 #url: "http://username.github.io/projectname"
@@ -14,65 +14,62 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: My website
+title: Harlan Time
 
 # Short description of your site
-description: A virtual proof that name is awesome!
+description: Harlan's Development Journal
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
   Resources:
     - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
     - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
-  Author's home: "http://deanattali.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/avatar-icon.png"
+avatar: "/img/harlan.jpg"
 
 # --- Footer options --- #
 
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
-  email: "youremail@domain.com"
-  facebook: yourname  # eg. daattali
-  github: yourname    # eg. daattali
-  twitter: yourname   # eg. daattali
-  linkedin: yourname  # eg. daattali
-  xing: yourname      # eg. daattali
-  stackoverflow: yourlink  # eg. "3943160/daattali"
-  instagram: yourname # eg. daattali
-  youtube: yourlink # eg. user/daattali or channel/daattali
+  name: Harlan Iverson
+  email: "h.iverson@gmail.com"
+  #facebook: yourname  # eg. daattali
+  github: harlanji    # eg. daattali
+  twitter: harlanji   # eg. daattali
+  linkedin: harlanji  # eg. daattali
+  #xing: yourname      # eg. daattali
+  #stackoverflow: yourlink  # eg. "3943160/daattali"
+  instagram: harlanji # eg. daattali
+  #youtube: yourlink # eg. user/daattali or channel/daattali
 
 # Select which links to show in the footer
 footer-links-active:
-  rss: false
-  facebook: true
+  rss: true
+  facebook: false
   email: true
   twitter: true
   github: true
-  linkedin: false
+  linkedin: true
   xing: false
   stackoverflow: false
-  instagram: false
+  instagram: true
   youtube: false
 
 # Select which share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
+  twitter: false
+  facebook: false
   google: false
-  linkedin: true
+  linkedin: false
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "AnalogZen.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 
@@ -89,7 +86,7 @@ timezone: "America/Vancouver"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 5
+paginate: 10
 
 kramdown:
   input: GFM
@@ -102,8 +99,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts
-      social-share: true # add social media sharing buttons to all blog posts
+      comments: false  # add comments to all blog posts
+      social-share: false # add social media sharing buttons to all blog posts
   -
     scope:
       path: "" # all files
@@ -137,6 +134,7 @@ prose:
     - /css
     - /img
     - /js
+    - /assets
   metadata:
     _posts:
       - name: "layout"
@@ -171,5 +169,3 @@ prose:
 gems:
   - jekyll-paginate
 
-# Beautiful Jekyll / Dean Attali
-# 2fc73a3a967e97599c9763d05e564189

@@ -1,0 +1,12 @@
+---
+layout: post
+title: How to allow non-root users to control Upstart services, without a sudo password
+  prompt.
+date: '2013-05-22T08:50:00-07:00'
+tags:
+- web development
+tumblr_url: http://blog.devspan.com/post/51074630888/how-to-allow-non-root-users-to-control-upstart
+---
+<a href="http://serverfault.com/questions/390687/upstart-allowing-a-normal-user-to-stop-and-start-my-custom-service">How to allow non-root users to control Upstart services, without a sudo password prompt.</a><br/><p>The snippet that I&#8217;m using is here, but this will apply to running any privileged command without a password:</p>
+<pre><code>youruser ALL = (root) NOPASSWD: /sbin/start yourservice, /sbin/stop yourservice, /sbin/restart yourservice</code></pre>
+<p>I did not previously know that sudoers allowed rules at the argument level, though I&#8217;d used NOPASSWD before. <a href="http://www.sudo.ws/sudoers.man.html">The man page</a> is pretty packed with usage info, and it appears there is a lot to learn. For today, a lot of things I&#8217;d been doing with my deployment scripting should get a lot  easier :).</p>

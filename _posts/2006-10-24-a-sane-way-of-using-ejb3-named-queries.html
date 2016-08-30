@@ -1,0 +1,10 @@
+---
+layout: post
+title: A Sane Way of Using EJB3 Named Queries
+date: 2006-10-24
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+Start off by putting the @NamedQuery annotation on your entity class<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/2962/557/1600/MemberClass.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://photos1.blogger.com/blogger/2962/557/320/MemberClass.png" alt="" border="0" /></a><br />Then add a corresponding entry to your NamedQueries class along with a comment. You'll notice that the value of the constant is the named attribute we provided to the @NamedQuery annotation above.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/2962/557/1600/NamedQueriesClass.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://photos1.blogger.com/blogger/2962/557/320/NamedQueriesClass.png" alt="" border="0" /></a><br />The end result of these is that named queries 1) will never be mistyped, and 2) provide handy context help to remind you which parameters need to be added:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/2962/557/1600/ClassInUse.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://photos1.blogger.com/blogger/2962/557/320/ClassInUse.png" alt="" border="0" /></a></div>

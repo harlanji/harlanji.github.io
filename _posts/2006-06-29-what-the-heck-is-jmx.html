@@ -1,0 +1,10 @@
+---
+layout: post
+title: What the heck is JMX?
+date: 2006-06-29
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+JMX, or Java Management Extensions, is a nifty, somewhat underappreciated part of the J2EE spec. It is the only part of the spec (that I know of) that is not designed to respond to requests or events; the closest thing to JMX is JMS (message driven beans), however they still require external events for invocation. That isn't to say the same job can't be done in, say, a war file (it can, and too often, is); think of JMX beans as windows services. Like windows services, JMX beans provide more than just a means of executing persistent code.  They are manageable by a JMX management console (think windows service admin or MMC), and are available through JNDI. And of course they are able to take advantage of other EJBesque goodies like dependency injection and container managed security.<br /><br />This opens up some interesting doors for web programming--PHP programmers out there probably can't even fathom it; but to you IoC-using Java programmers out there, JMX is the next logical extension to the application scope. While certain IoC frameworks may replace all JMX functionality, JMX is a standard part of J2EE and therefore JMX beans are able to be deployed in all J2EE application servers without dependence on 3rd parties to maintain an IoC framework or proprietary deployment/configuration files.</div>

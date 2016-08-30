@@ -1,0 +1,10 @@
+---
+layout: post
+title: Half Baked Idea About PHP Shared Memory
+date: 2006-07-05
+comments: false
+---
+
+<h1>{{ page.title }}</h1>
+<div class='post'>
+I had a seemingly interesting idea for an isolated runtime environment for PHP. One could conceivably create a master/slave configuration where the master forks child processes and is able to 'reload' classes after a code change. It would work like PHP shared memory sessions do, only it would allow you to have PHP manage other pure PHP processes. This would enable interesting things, like an "application" scope that scripts could use, as well as the ability to have more control over the request process. Even truly persistent socket connections if an ejb-like proxy IPC layer were written. The necessity of apache would disappear because one could fully implement the HTTP protocol in PHP. Conceivably one could even conform to the servlet spec itself.</div>

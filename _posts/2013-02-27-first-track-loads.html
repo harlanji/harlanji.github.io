@@ -1,0 +1,11 @@
+---
+layout: post
+title: first track loads
+date: '2013-02-27T16:05:44-08:00'
+tags:
+- hackerfair3
+tumblr_url: http://blog.devspan.com/post/44176068040/first-track-loads
+---
+<img src="/tumblr_files/tumblr_miwllkwDaa1qa3yi0o1_1280.png"/><br/><p>WORKS!</p>
+<p>granted the UI locks for the length of the song the first time it is loaded, afterward it works perfectly. I will play around with various structures to support something like producer consumer with seeking; quite likely I&#8217;ll use mmap, and then seek+music_delivery will adjust the starting pointer. I don&#8217;t know what to do if the full track was not materialized&#8212;quite likely discard it.</p>
+<p>feels good!</p>
