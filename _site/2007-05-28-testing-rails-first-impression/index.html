@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Testing Rails - First Impression</title>
+
+  <meta name="author" content="Harlan Iverson" />
+  
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Harlan Time - Harlan's Development Journal" href="/feed.xml" />
+
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    
+      
+  
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+    
+  
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+    
+  
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  <meta property="og:title" content="Testing Rails - First Impression" />
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:url" content="./2007-05-28-testing-rails-first-impression/" />
+  
+  
+  <meta property="og:image" content="./img/harlan.jpg" />
+  
+  
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@harlanji" />
+  <meta name="twitter:creator" content="@harlanji" />
+  <meta name="twitter:title" content="Testing Rails - First Impression" />
+  <meta name="twitter:description" content="Testing Rails - First Impression Note: This post is a work in progress.My first impression of the Rails testing framework was that it is the shit. Unfortunately I haven&#39;t been able to get it to work yet--my preferred database configuration is not supported by Rails/ActiveRecord. The configuration that I would..." />
+  
+  <meta name="twitter:image" content="./img/harlan.jpg" />
+  
+  
+</head>
+
+
+  <body>
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=".">Harlan Time</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Archive</a>
+            <div class="navlinks-children">
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2016">2016</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2014">2014</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2013">2013</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2012">2012</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2011">2011</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2010">2010</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2008">2008</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2007">2007</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2006">2006</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2005">2005</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href=". ">
+	      <img class="avatar-img" src="/img/harlan.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Testing Rails - First Impression</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on May 28, 2007</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <article role="main" class="blog-post">
+        <h1>Testing Rails - First Impression</h1>
+<div class='post'>
+<span style="font-style: italic;">Note: This post is a work in progress.</span><br /><br />My first impression of the Rails testing framework was that it is the shit. Unfortunately I haven't been able to get it to work yet--my preferred database configuration is not supported by Rails/ActiveRecord. The configuration that I would prefer to use is not far outside of the norm by most standards; I simply want to have a single database with multiple schemas for test, devel and production, as opposed to Rails' preferred method of using three separate databases.<br /><br />Something else that's irksome is Migration's lack of built-in support for unique and foreign key constraints, and sequences, outside of execute statements.  It's easy enough to use raw SQL for those things, but it seems to make using Migration a moot point; it's easy enough to use the up/down database versioning with raw SQL files, I have been doing it for years.<br /><br />Another issue that I ran into, is that ActiveRecord abstracts so much of the database interaction that simple things like rolling back a transaction might as well be impossible to find for a n00b like myself; I searched for an hour and decided to move on with a reconnect statement and TODO comment. In fact, I never even found documentation for how to deal with a constraint violation at all. I took my prior knowledge of Java and figured I could "rescue" the StatementInvalid error; but again, no mention of how to handle the connection.<br /><br />Beyond those issues, testing has been pleasant. I created a simple registration controller that displays a form and handles its submission. I am able to verify the registration by doing a find on ActiveRecord. I am also able to easily test validation errors and cases such as "username already exists" (enforced by a database constraint)--two things which almost no applications I have developed have ever been tested for--save for HealthMatch. It is interesting to work with the Rails testing framework because the level of coverage possible mirrors the goal of ongoing effort on that project. Just last week I created a prototype DbUnit-enabled validation test base with an identical concept of fixtures, so I will be able to take a lot of this experience back there.<br /><br />The main argument I've had against Rails (and PHP, and ...) is that dynamic languages in the context of a medium-scale, medium-lived project will face brutal regression issues. I hope that the testing framework lives up to my expectations and provides a level of coverage that makes my argument moot. The defective nature of Rails' pre-5.x MySQL-centric database support is annoying, but it isn't a deal breaker. It did, however, smudge up the glossy image I had of Rails after the reading about its testing framework I've done lately, which was total redemption in my eyes.<br /><a href="javascript:void(0)" onclick="return false;" tabindex="7"><span></span></a><br /><span style="font-style: italic;">Source code for my demo is available </span><a style="font-style: italic;" href="http://trac.devspan.com/entror/browser/trunk/TestingDemo">in trac</a><span style="font-style: italic;"> and </span><a style="font-style: italic;" href="http://svn.devspan.com/entror/trunk/TestingDemo/">directly</a><span style="font-style: italic;"> from the subversion repository.</span></div>
+
+      </article>
+
+      
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2007-05-27-enterprise-ruby-on-rails/" data-toggle="tooltip" data-placement="top" title="Enterprise Ruby on Rails">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="/2007-05-30-lookmiiup-on-facebook-platform/" data-toggle="tooltip" data-placement="top" title="LookMiiUp on Facebook Platform?">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="https://github.com/harlanji" title="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://twitter.com/harlanji" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="mailto:h.iverson@gmail.com" title="Email me">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://linkedin.com/in/harlanji" title="LinkedIn">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+		  
+      
+          <li>
+            <a href="https://www.instagram.com/harlanji" title="Instagram">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+      
+		  
+		  <li>
+			<a href="/feed.xml" title="RSS">
+			  <span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+			  </span>
+			</a>
+		  </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+		  Harlan Iverson
+		  &nbsp;&bull;&nbsp;
+		  2016
+
+		  
+		  &nbsp;&bull;&nbsp;
+		  <a href=".">AnalogZen.com</a>
+		  
+	    </p>
+	        <!-- Please don't remove this, keep my open source work credited :) -->
+		<p class="theme-by text-muted">
+		  Theme by
+		  <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+		</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>

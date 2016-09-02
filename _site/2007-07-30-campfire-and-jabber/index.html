@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Campfire and Jabber</title>
+
+  <meta name="author" content="Harlan Iverson" />
+  
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Harlan Time - Harlan's Development Journal" href="/feed.xml" />
+
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    
+      
+  
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+    
+  
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+    
+  
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  <meta property="og:title" content="Campfire and Jabber" />
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:url" content="./2007-07-30-campfire-and-jabber/" />
+  
+  
+  <meta property="og:image" content="./img/harlan.jpg" />
+  
+  
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@harlanji" />
+  <meta name="twitter:creator" content="@harlanji" />
+  <meta name="twitter:title" content="Campfire and Jabber" />
+  <meta name="twitter:description" content="Campfire and Jabber Note: this post is a work in progress.Last night at RUM there was a presentation (by unknown) which addressed the issue of “telecomputing” (trendy word for telecommuting), using Rails + Trac + Campfire on a project with a global development effort as a model. There were a..." />
+  
+  <meta name="twitter:image" content="./img/harlan.jpg" />
+  
+  
+</head>
+
+
+  <body>
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=".">Harlan Time</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Archive</a>
+            <div class="navlinks-children">
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2016">2016</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2014">2014</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2013">2013</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2012">2012</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2011">2011</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2010">2010</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2008">2008</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2007">2007</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2006">2006</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2005">2005</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href=". ">
+	      <img class="avatar-img" src="/img/harlan.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Campfire and Jabber</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on July 30, 2007</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <article role="main" class="blog-post">
+        <h1>Campfire and Jabber</h1>
+<div class='post'>
+<p class="MsoNormal" style="line-height: 150%;"><em>Note: this post is a work in progress.</em></p><p class="MsoNormal" style="line-height: 150%;">Last night at <a href="http://ruby.mn/">RUM</a> there was a presentation (by unknown) which addressed the issue of “telecomputing” (trendy word for telecommuting), using <a href="http://rubyonrails.org/">Rails</a> + <a href="http://trac.edgewall.org/">Trac</a> + <a href="http://campfirenow.com/">Campfire</a> on a project with a global development effort as a model. There were a few major points to his project's successful approach:<br /><br /><b>Use Conventions From Rails Manual</b><br />”Convention over configuration” is the motto Rails was developed by. The presenter addressed an all-too-familiar sentiment of seeing Ruby degenerate into something resembling PHP, as soon as the code deviates from the standard conventions too much. To nip this issue in the bud, his team adopted a strictly convention-centric approach--if it's not in the manual, don't do it. (<i>note</i>: I don’t actually know what book he’s referring to, please enlighten me if you know)<br /><br /><b>Use a "Torch Passing" Technique for Global Development Teams</b><br />This was the first time I had heard the term "torch passing" in this context, but I think it is a perfect analogy for its purpose. Torch passing is what it sounds like: having people in one location brief the next team in chronological order about the day's work, and hand leadership to the new them. In this way, with no central team leadership, a global development effort is not working headless for 24-48 hours at a time. </p><p class="MsoNormal" style="line-height: 150%;">One member of the audience shared his belief that communication will never be as good as when a person is working next to you, which I think can be true depending on the task at hand. His specific example was when a designer made incorrect attempts to fix defects in a GUI; that had 48 hours wasted between each iteration. Perhaps if leadership were passed around the globe throughout the day, rather than remaining static, this issue would disappear.<br /><br /><b>Use Skype for conference calls</b><br /><a href="http://www.skype.com/">Skype</a> is cheaper than phone service (free, in fact), and multi-platform. And Dan Grigsby made an interesting contribution to the subject: a study found that effectiveness of communication increases with fidelity (citation?), and Skype has about twice the fidelity of a standard phone line.<br /><br /><b>Campire</b><br />This where the meat of my interest lay. Campfire is a <a href="http://37signals.com/">37signals</a> application that is very much like an IRC client. It is more like a <a href="http://www.xmpp.org/extensions/xep-0045.html">Jabber MUC</a>, however, in that conversations remain static and history is sent to new clients that enter a chat room (the past X lines, minutes, etc). After briefly looking at the <a href="http://campfirenow.com/tour/video/">video tour</a> available on 37signals' website it seems like there are some interesting nuggets that can be added to Soashable. Namely file uploading that displays rich media directly in the chat window intelligently, presumably by mime type. Indeed, most of the product could be implemented using existing XEP-defined functionality. </p><p class="MsoNormal" style="line-height: 150%;">I think there is lots of potential here to build a clone on the same messaging/presence platform as Soashable using existing Jabber extensions which, as I love, means minimal work on my part . As far as business goes, I have some resevations about an organization like DHS and some of the employees' (business analysts, management, etc), willingness to adopt something remotely similar to Campfire (I could be wrong). But for a smaller team in a more cutting edge environment, I think it would be great and very welcome. I can't count the number of walks across the office it would have saved me at my former employer. Maybe if there was an ugly, unintuitive interface, like Oracle products, a place like DHS would like it more ;) </p><p class="MsoNormal" style="line-height: 150%;">I think the core advantages of using Jabber over a custom Java/Rails backend is scalability, mitigation of labor and loose coupling. By using an existing, standardized, specified platform you don't have to do a lot of things yourself. And if you do, you already have templates to explain your custom functionality. </p><p class="MsoNormal" style="line-height: 150%;">Using Meebo as an example: they have a team of C++ developers maintaing a custom version of GAIM on their servers, and a nasty (to maintain) looking Ajax/JSON protocol. Okay, but they need scalability. With Jabber, smarter people already have that taken care of.  What about the mobile interface they promised forever and a day ago? Part of me thinks that they coupled their protocol too tightly with their GUI. I was able to set up a working, web-based AIM client over the course of a weekend with little prior knowledge of Jabber. I was then able to unit test it and completely rebuild the GUI without changing a line of tested code. </p><p class="MsoNormal" style="line-height: 150%;">You'd tell me if I were stuck in a box where all I could see is Jabber, right?</p></div>
+
+      </article>
+
+      
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2007-07-25-update-javascript-xmpp-and-data-plans/" data-toggle="tooltip" data-placement="top" title="Update: Javascript XMPP and Data Plans">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="/2007-08-02-non-strong-references-in-java/" data-toggle="tooltip" data-placement="top" title="Non-Strong References in Java">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="https://github.com/harlanji" title="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://twitter.com/harlanji" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="mailto:h.iverson@gmail.com" title="Email me">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://linkedin.com/in/harlanji" title="LinkedIn">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+		  
+      
+          <li>
+            <a href="https://www.instagram.com/harlanji" title="Instagram">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+      
+		  
+		  <li>
+			<a href="/feed.xml" title="RSS">
+			  <span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+			  </span>
+			</a>
+		  </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+		  Harlan Iverson
+		  &nbsp;&bull;&nbsp;
+		  2016
+
+		  
+		  &nbsp;&bull;&nbsp;
+		  <a href=".">AnalogZen.com</a>
+		  
+	    </p>
+	        <!-- Please don't remove this, keep my open source work credited :) -->
+		<p class="theme-by text-muted">
+		  Theme by
+		  <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+		</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>

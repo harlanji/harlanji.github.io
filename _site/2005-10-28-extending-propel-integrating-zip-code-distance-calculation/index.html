@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Extending Propel -- Integrating Zip Code Distance Calculation</title>
+
+  <meta name="author" content="Harlan Iverson" />
+  
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Harlan Time - Harlan's Development Journal" href="/feed.xml" />
+
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    
+      
+  
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+    
+  
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+    
+  
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  <meta property="og:title" content="Extending Propel -- Integrating Zip Code Distance Calculation" />
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:url" content="./2005-10-28-extending-propel-integrating-zip-code-distance-calculation/" />
+  
+  
+  <meta property="og:image" content="./img/harlan.jpg" />
+  
+  
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@harlanji" />
+  <meta name="twitter:creator" content="@harlanji" />
+  <meta name="twitter:title" content="Extending Propel -- Integrating Zip Code Distance Calculation" />
+  <meta name="twitter:description" content="Extending Propel -- Integrating Zip Code Distance Calculation For the past day I&#39;ve been working a lot with zip code distance calculation, and now it&#39;s time to integrate my findings into my application. I&#39;ve chosen to build my application around the Propel framework, so my code will be added to..." />
+  
+  <meta name="twitter:image" content="./img/harlan.jpg" />
+  
+  
+</head>
+
+
+  <body>
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=".">Harlan Time</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Archive</a>
+            <div class="navlinks-children">
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2016">2016</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2014">2014</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2013">2013</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2012">2012</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2011">2011</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2010">2010</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2008">2008</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2007">2007</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2006">2006</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2005">2005</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href=". ">
+	      <img class="avatar-img" src="/img/harlan.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Extending Propel -- Integrating Zip Code Distance Calculation</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on October 28, 2005</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <article role="main" class="blog-post">
+        <h1>Extending Propel -- Integrating Zip Code Distance Calculation</h1>
+<div class='post'>
+For the <a href="http://hdevj.blogspot.com/2005/10/more-zip-code-distance-calculation.html">past day</a> I've been working a lot with zip code distance calculation, and now it's time to integrate my findings into my application. I've chosen to build my application around the <a href="http://propel.phpdb.org/">Propel</a> framework, so my code will be added to the application classes which Propel so graciously generates skeletons for.<br /><br />We'll start out with the Event class. We want to get all events within n miles of a particular zipcode. Since this is generalized beyond the level of Event, we will place it within the EventPeer class (for more information, read Propel's documentation).<br /><br /><pre>class EventPeer extends BaseEventPeer {<br /><br />static function GetWithinRadius( $zip, $maxDistance ) {<br /> $con = Propel::getConnection(self::DATABASE_NAME);<br /><br /> // get a list of columns that we actually care about (sort of hackish, but not really. see Select <a href="http://propel.phpdb.org/docs/user_guide/chapters/FindingObjects.html#WritingSQL">Using SQL</a> in Propel's user guide)<br /> $c = new Criteria();<br /> self::addSelectColumns( $c );<br /><br /> $sql = "SELECT ".join( ",", $c->getSelectColumns() )." FROM ".self::TABLE_NAME." WHERE ZipDistance(?, ".self::ZIPCODE.") < ?";     $stmt = $con->prepareStatement( $sql );<br /> $stmt->setInt( 1, $zip );<br /> $stmt->setInt( 2, $maxDistance );<br /><br /> $rs = $stmt->executeQuery(ResultSet::FETCHMODE_NUM);<br /><br /> return self::populateObjects($rs);<br />}<br /><br />}</pre><br /><br />Easy enough? yep. We implement UserPeer::GetWithinRadius exactly the same. Now as an exercise to show you how fun Propel can be, here is a function to get all events within n miles of a particular User:<br /><br /><pre>class User extends BaseUser {<br />function getNearByEvents( $maxDistance ) {<br /> $zip = $this->getZipCode();<br /><br /> return EventPeer::GetWithinRadius( $zip, $maxDistance );<br />}<br />}</pre><br /><br />This is ridiculously simple, isn't it? I'd like to give thanks to the inventors of stored procedures and Propel.</div>
+
+      </article>
+
+      
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2005-10-28-efficiently-calculating-zip-code-radius-with-sql/" data-toggle="tooltip" data-placement="top" title="Efficiently Calculating Zip Code Radius With SQL">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="/2005-10-28-more-zip-code-distance-calculation-stored-procedures/" data-toggle="tooltip" data-placement="top" title="More Zip Code Distance Calculation... Stored Procedures">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="https://github.com/harlanji" title="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://twitter.com/harlanji" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="mailto:h.iverson@gmail.com" title="Email me">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://linkedin.com/in/harlanji" title="LinkedIn">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+		  
+      
+          <li>
+            <a href="https://www.instagram.com/harlanji" title="Instagram">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+      
+		  
+		  <li>
+			<a href="/feed.xml" title="RSS">
+			  <span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+			  </span>
+			</a>
+		  </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+		  Harlan Iverson
+		  &nbsp;&bull;&nbsp;
+		  2016
+
+		  
+		  &nbsp;&bull;&nbsp;
+		  <a href=".">AnalogZen.com</a>
+		  
+	    </p>
+	        <!-- Please don't remove this, keep my open source work credited :) -->
+		<p class="theme-by text-muted">
+		  Theme by
+		  <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+		</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>

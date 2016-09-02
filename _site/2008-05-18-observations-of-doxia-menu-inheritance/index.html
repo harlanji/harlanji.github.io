@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Observations of Doxia Menu Inheritance</title>
+
+  <meta name="author" content="Harlan Iverson" />
+  
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Harlan Time - Harlan's Development Journal" href="/feed.xml" />
+
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    
+      
+  
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+    
+  
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+    
+  
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  <meta property="og:title" content="Observations of Doxia Menu Inheritance" />
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:url" content="./2008-05-18-observations-of-doxia-menu-inheritance/" />
+  
+  
+  <meta property="og:image" content="./img/harlan.jpg" />
+  
+  
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@harlanji" />
+  <meta name="twitter:creator" content="@harlanji" />
+  <meta name="twitter:title" content="Observations of Doxia Menu Inheritance" />
+  <meta name="twitter:description" content="Observations of Doxia Menu Inheritance I couldn&#39;t find much/any documentation on inheriting menus from a Super POM using Doxia + Maven 2. Here is a quick overview of what I think I have learned using a small reference example to illustrate.Project Layoutsuperproject|+- src/site/site.xml|\- module1 | \- src/site/site.xmlSuper Module site.xml Content&amp;lt;?xml..." />
+  
+  <meta name="twitter:image" content="./img/harlan.jpg" />
+  
+  
+</head>
+
+
+  <body>
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=".">Harlan Time</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Archive</a>
+            <div class="navlinks-children">
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2016">2016</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2014">2014</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2013">2013</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2012">2012</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2011">2011</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2010">2010</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2008">2008</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2007">2007</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2006">2006</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2005">2005</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href=". ">
+	      <img class="avatar-img" src="/img/harlan.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Observations of Doxia Menu Inheritance</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on May 18, 2008</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <article role="main" class="blog-post">
+        <h1>Observations of Doxia Menu Inheritance</h1>
+<div class='post'>
+I couldn't find much/any documentation on inheriting menus from a Super POM using Doxia + Maven 2. Here is a quick overview of what I think I have learned using a small reference example to illustrate.<br /><br /><span style="font-weight: bold;">Project Layout</span><br /><pre>superproject<br />|<br />+- src/site/site.xml<br />|<br />\- module1<br /> |<br /> \- src/site/site.xml<br /></pre><br /><br /><span style="font-weight: bold;">Super Module site.xml Content</span><br /><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;project name="${project.name}"&gt;<br />&lt;body&gt;<br />1   &lt;menu ref="parent" inherit="top"/&gt;<br />  <br />  &lt;menu name="Super Menu"&gt;<br />      &lt;item name="Parent A" href="parenta.html"/&gt;<br />      &lt;item name="Parent B" href="parentb.html"/&gt;<br />  &lt;/menu&gt;<br /><br />2   &lt;menu ref="modules" inherit="bottom"/&gt;<br />3   &lt;menu ref="reports" inherit="bottom"/&gt;<br />  &lt;/body&gt;<br />&lt;/project&gt;<br /></pre><br /><br /><span style="font-weight: bold;">Sub Module site.xml Content</span><br /><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;project name="${project.name}"&gt;<br /> &lt;body&gt;<br />4   &lt;menu name="Menu A" inherit="bottom"&gt;<br />       &lt;item name="Link 1" href="link1.html"/&gt;<br />       &lt;item name="Link 2" href="link2.html"/&gt;<br />   &lt;/menu&gt;<br />5  &lt;menu ref="reports" inherit="bottom"/&gt;<br /><br />   &lt;/body&gt;<br />&lt;/project&gt;<br /></pre><br /><br /><span style="font-weight: bold;">So what does all this mean?</span><br /><ul><li>interitance="top|bottom" - put a menu node before or after sub module's menu items</li><li>1 - will only be visible and have content in sub modules</li><li>2 - will only be visible and have content in super modules</li><li>3 - put reports at the bottom of all modules</li><li>4 - inherit="bottom" is not completely clear to me, but either top or bottom is required for the menu to show up</li><li>5 - I wanted project reports to always be at the bottom of the menu and could not figure it out without explicitly putting it there; this seems to override the report menu specified in the super site.xml.</li></ul><br />Please correct me if I'm wrong about any of these observations/assumptions, and point me to documentation if you know of any. Otherwise, I hope this helps somebody.</div>
+
+      </article>
+
+      
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2008-05-16-internet-identity-workshop-iiw-thoughts/" data-toggle="tooltip" data-placement="top" title="Internet Identity Workshop (IIW) - Thoughts">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="/2008-06-30-javascript-dependency-system-using-maven-yui-loader/" data-toggle="tooltip" data-placement="top" title="Javascript Dependency System using Maven + YUI Loader">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="https://github.com/harlanji" title="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://twitter.com/harlanji" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="mailto:h.iverson@gmail.com" title="Email me">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://linkedin.com/in/harlanji" title="LinkedIn">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+		  
+      
+          <li>
+            <a href="https://www.instagram.com/harlanji" title="Instagram">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+      
+		  
+		  <li>
+			<a href="/feed.xml" title="RSS">
+			  <span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+			  </span>
+			</a>
+		  </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+		  Harlan Iverson
+		  &nbsp;&bull;&nbsp;
+		  2016
+
+		  
+		  &nbsp;&bull;&nbsp;
+		  <a href=".">AnalogZen.com</a>
+		  
+	    </p>
+	        <!-- Please don't remove this, keep my open source work credited :) -->
+		<p class="theme-by text-muted">
+		  Theme by
+		  <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+		</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>

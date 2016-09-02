@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Meebo Clone -- as Easy as it Seems?</title>
+
+  <meta name="author" content="Harlan Iverson" />
+  
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Harlan Time - Harlan's Development Journal" href="/feed.xml" />
+
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    
+      
+  
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+    
+  
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+    
+  
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  <meta property="og:title" content="Meebo Clone -- as Easy as it Seems?" />
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:url" content="./2007-07-04-meebo-clone-as-easy-as-it-seems/" />
+  
+  
+  <meta property="og:image" content="./img/harlan.jpg" />
+  
+  
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@harlanji" />
+  <meta name="twitter:creator" content="@harlanji" />
+  <meta name="twitter:title" content="Meebo Clone -- as Easy as it Seems?" />
+  <meta name="twitter:description" content="Meebo Clone -- as Easy as it Seems? Once again I&#39;ve started kicking around the idea of creating a web based chat system. After seeing the possibilities from the folks at Meebo, I am starting to tinker with a prototype based on Jabber + HTTP Binding (XEP-0124). This standard allows..." />
+  
+  <meta name="twitter:image" content="./img/harlan.jpg" />
+  
+  
+</head>
+
+
+  <body>
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=".">Harlan Time</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Archive</a>
+            <div class="navlinks-children">
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2016">2016</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2014">2014</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2013">2013</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2012">2012</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2011">2011</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2010">2010</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2008">2008</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2007">2007</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2006">2006</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2005">2005</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href=". ">
+	      <img class="avatar-img" src="/img/harlan.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Meebo Clone -- as Easy as it Seems?</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on July 4, 2007</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <article role="main" class="blog-post">
+        <h1>Meebo Clone -- as Easy as it Seems?</h1>
+<div class='post'>
+Once again I've started kicking around the idea of creating a web based chat system. After seeing the possibilities from the folks at <a href="https://www.meebo.com/">Meebo</a>, I am starting to tinker with a prototype based on Jabber + HTTP Binding (<a href="http://www.xmpp.org/extensions/xep-0124.html">XEP-0124</a>). This standard allows Ajax requests to be made directly to the jabber server (or thought an HTTP proxy to the server), cutting out any effort required to make a custom communication layer. Further, it allows the full extensibility of Jabber to be realized, since raw packets are delivered directly to the web client. It also allows for sessions to be suspended and resumed, which means that if a person refreshes the browser window or leaves the site entirely and returns, they never have to sign off of the network because they retain a session key stored as a cookie. Their browser simply received messages that were queued up after their suspension upon a call to resume (disclaimer: I haven't fully tested suspend/resume functionality).<br /><br />From my understanding (which comes from job postings and looking at JS code), Meebo uses a modified version of Gaim with a custom Ajax communication layer. I question why they didn't take the approach that I am taking, but think it could be to do with some factor I haven't taken into account. So far though, my experimentation has been very fruitful:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_eS8rwzJcHas/RowHumYlY2I/AAAAAAAAAAk/BlU32XNcu5Y/s1600-h/soashable1.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://2.bp.blogspot.com/_eS8rwzJcHas/RowHumYlY2I/AAAAAAAAAAk/BlU32XNcu5Y/s320/soashable1.png" alt="" id="BLOGGER_PHOTO_ID_5083446576553485154" border="0" /></a><br />In the past 12 hours I have been able to piggy back off of existing tools to make a server that supports communication with external gateways (AIM, MSN, et al), and a client that is able to register, sign on, send and receive IMs, and receive roster updates. Not bad, if I do say so myself.<br /><br />No estimate or time line about when source code will be released.</div>
+
+      </article>
+
+      
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2007-07-04-hardware-scare/" data-toggle="tooltip" data-placement="top" title="Hardware Scare">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="/2007-07-04-the-mindset-of-an-idea/" data-toggle="tooltip" data-placement="top" title="The Mindset of an Idea">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="https://github.com/harlanji" title="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://twitter.com/harlanji" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="mailto:h.iverson@gmail.com" title="Email me">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://linkedin.com/in/harlanji" title="LinkedIn">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+		  
+      
+          <li>
+            <a href="https://www.instagram.com/harlanji" title="Instagram">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+      
+		  
+		  <li>
+			<a href="/feed.xml" title="RSS">
+			  <span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+			  </span>
+			</a>
+		  </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+		  Harlan Iverson
+		  &nbsp;&bull;&nbsp;
+		  2016
+
+		  
+		  &nbsp;&bull;&nbsp;
+		  <a href=".">AnalogZen.com</a>
+		  
+	    </p>
+	        <!-- Please don't remove this, keep my open source work credited :) -->
+		<p class="theme-by text-muted">
+		  Theme by
+		  <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+		</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>How Logic and Truth Tables Can Apply To Unit Testing</title>
+
+  <meta name="author" content="Harlan Iverson" />
+  
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Harlan Time - Harlan's Development Journal" href="/feed.xml" />
+
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    
+      
+  
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+    
+  
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+    
+  
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  <meta property="og:title" content="How Logic and Truth Tables Can Apply To Unit Testing" />
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:url" content="./2007-12-12-how-logic-and-truth-tables-can-apply-to-unit-testing/" />
+  
+  
+  <meta property="og:image" content="./img/harlan.jpg" />
+  
+  
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@harlanji" />
+  <meta name="twitter:creator" content="@harlanji" />
+  <meta name="twitter:title" content="How Logic and Truth Tables Can Apply To Unit Testing" />
+  <meta name="twitter:description" content="How Logic and Truth Tables Can Apply To Unit Testing In the past month I have done nothing but code reviews and mentoring. It&#39;s forced me to work muscles I didn&#39;t know I had, but out of it has come one shining gem: a systematic method for determining test cases...." />
+  
+  <meta name="twitter:image" content="./img/harlan.jpg" />
+  
+  
+</head>
+
+
+  <body>
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=".">Harlan Time</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Archive</a>
+            <div class="navlinks-children">
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2016">2016</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2014">2014</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2013">2013</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2012">2012</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2011">2011</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2010">2010</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2008">2008</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2007">2007</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2006">2006</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2005">2005</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href=". ">
+	      <img class="avatar-img" src="/img/harlan.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>How Logic and Truth Tables Can Apply To Unit Testing</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on December 12, 2007</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <article role="main" class="blog-post">
+        <h1>How Logic and Truth Tables Can Apply To Unit Testing</h1>
+<div class='post'>
+<p style="margin-bottom: 0in; line-height: 150%;"> In the past month I have done nothing but code reviews and mentoring. It's forced me to work muscles I didn't know I had, but out of it has come one shining gem: a systematic method for determining test cases. Basically it's the same as the set up part of a Logic problem: figure out exactly what the code is doing (in my case, we have a written spec for each class), break it down into variables, write a truth table for all combinations (2^<span style="font-style: normal;">n</span> rows, where n is the number of variables), and go at it. The variables can require an understanding of the code, to an extent.</p> <p style="margin-bottom: 0in; line-height: 150%;"> For example: “Return whether there is a dependent care child or step child in A1 household” turns into: P=”There is a dependent care person who is a relative”, Q=”The relative is a child or step child”, R=”The dependent care person is in A1 household”. This may seem like white box testing, but really the code necessarily reflects the structure of business objects and these variables must reflect that as well—the objects will not change in this lifetime, so we'll call it gray box testing.</p> <p style="margin-bottom: 0in; line-height: 150%;"> At first glance, I came up with a method to intelligently ignore certain cases rather than write all possible combinations (in this case 8, reduced to 5): test the TTT condition, and then each variation with one false (FTT, TFT, TTF), and for good measure the FFF case. This method would become more useful as the number of variables grew (t=n+2, where t is the number of tests and n is the number of variables), with 6 for 16, 7 for 32, etc. The theory was to test each variable in isolation (under the assumption that a single F would make the whole statement F):</p> <table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">  <col width="85*">  <col width="85*">  <col width="85*">  <tbody><tr valign="top">   <td width="33%">    <p>P</p>   </td>   <td width="33%">    <p>Q</p>   </td>   <td width="33%">    <p>R</p>   </td>  </tr>  <tr valign="top">   <td width="33%">    <p><b>T</b></p>   </td>   <td width="33%">    <p><b>T</b></p>   </td>   <td width="33%">    <p><b>T</b></p>   </td>  </tr>  <tr valign="top">   <td width="33%">    <p>T</p>   </td>   <td width="33%">    <p>T</p>   </td>   <td width="33%">    <p><b>F</b></p>   </td>  </tr>  <tr valign="top">   <td width="33%">    <p>T</p>   </td>   <td width="33%">    <p><b>F</b></p>   </td>   <td width="33%">    <p>T</p>   </td>  </tr>  <tr valign="top">   <td width="33%">    <p>T</p>   </td>   <td width="33%">    <p>F</p>   </td>   <td width="33%">    <p>F</p>   </td>  </tr>  <tr valign="top">   <td width="33%">    <p><b>F</b></p>   </td>   <td width="33%">    <p>T</p>   </td>   <td width="33%">    <p>T</p>   </td>  </tr>  <tr valign="top">   <td width="33%">    <p>F</p>   </td>   <td width="33%">    <p>T</p>   </td>   <td width="33%">    <p>F</p>   </td>  </tr>  <tr valign="top">   <td width="33%">    <p>F</p>   </td>   <td width="33%">    <p>F</p>   </td>   <td width="33%">    <p>T</p>   </td>  </tr>  <tr valign="top">   <td width="33%">    <p><b>F</b></p>   </td>   <td width="33%">    <p><b>F</b></p>   </td>   <td width="33%">    <p><b>F</b></p>   </td>  </tr> </tbody></table> <p style="margin-bottom: 0in; line-height: 150%;"><br /></p> <p style="margin-bottom: 0in; line-height: 150%;"> Unfortunately that logic does not follow unless you can independently test P, Q, and R without <a href="http://en.wikipedia.org/wiki/Side_effect_%28computer_science%29">side effects</a>. And if that is the case, then it's futile to even test the compound combinations since you could easily prove that all outcomes would be correct!  </p> <p style="margin-bottom: 0in; line-height: 150%;"> I had to work the problem using <a href="http://en.wikipedia.org/wiki/Bayes_theorem">Bayes' theorem</a> before I really believed that the shortcut method was ineffective, because (for me, anyway) common sense would dictate that if one F were present, the whole statement would be F, and therefore testing a statement with two F`s would be moot. The problem with that line of thinking is that it is assumed that the code checking Q has no side effects on P or R.  I wish the shortcut method worked!  </p> <p style="margin-bottom: 0in; line-height: 150%;"> In the end, the first part of the solution works and it's easy to develop the table of all test cases. There just isn't the shortcut that I hoped there would be. It makes me wonder if a functional language might allow a provably correct program; but more than anything, it makes me wish that I could work with a true <a href="http://en.wikipedia.org/wiki/Inference_engine">inference engine</a>.</p></div>
+
+      </article>
+
+      
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2007-11-15-bayeux-jabber-and-xep-0124/" data-toggle="tooltip" data-placement="top" title="Bayeux, Jabber and XEP-0124">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="/2008-01-19-tokbox-api-servlet/" data-toggle="tooltip" data-placement="top" title="TokBox API + Servlet">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="https://github.com/harlanji" title="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://twitter.com/harlanji" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="mailto:h.iverson@gmail.com" title="Email me">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://linkedin.com/in/harlanji" title="LinkedIn">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+		  
+      
+          <li>
+            <a href="https://www.instagram.com/harlanji" title="Instagram">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+      
+		  
+		  <li>
+			<a href="/feed.xml" title="RSS">
+			  <span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+			  </span>
+			</a>
+		  </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+		  Harlan Iverson
+		  &nbsp;&bull;&nbsp;
+		  2016
+
+		  
+		  &nbsp;&bull;&nbsp;
+		  <a href=".">AnalogZen.com</a>
+		  
+	    </p>
+	        <!-- Please don't remove this, keep my open source work credited :) -->
+		<p class="theme-by text-muted">
+		  Theme by
+		  <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+		</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>
