@@ -5,7 +5,7 @@
 
 # If you are building a simple GitHub user page (http://username.github.io) then use these settings:
 url: "."
-#baseurl: "/"
+baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
 #url: "http://username.github.io/projectname"
@@ -14,15 +14,16 @@ url: "."
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Harlan Time
+title: "Harlan Time"
 
 # Short description of your site
-description: Harlan's Development Journal
+description: "Harlan's Development Journal"
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
+  Archive: archive
   Resources:
     - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
     - Learn markdown: "http://www.markdowntutorial.com/"
