@@ -23,10 +23,17 @@ description: "Harlan's Development Journal"
 
 # List of links in the navigation bar
 navbar-links:
-  Archive: archive
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
+  Archive:
+    - 2016: archive/2016
+    - 2014: archive/2014
+    - 2013: archive/2013
+    - 2012: archive/2012
+    - 2011: archive/2011
+    - 2010: archive/2010
+    - 2008: archive/2008
+    - 2007: archive/2007
+    - 2006: archive/2006
+    - 2005: archive/2005
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
