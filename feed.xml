@@ -7,17 +7,6 @@
     <atom:link href="./feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Cool Stuff, 2015-2016 Q3 Edition</title>
-        <description>
-          
-          It’s been a couple of years since I’ve written an update. I get very focused. So what have I been focusing on? In future posts I’ll dig deeper back in my notes and commit logs to see what I was doing. For now I’ll focus on what’s in memory, which...
-        </description>
-        <pubDate>Mon, 29 Aug 2016 16:59:59 -0700</pubDate>
-        <link>./2016-08-29-hello-hello/</link>
-        <guid isPermaLink="true">./2016-08-29-hello-hello/</guid>
-      </item>
-    
-      <item>
         <title>GnuPG</title>
         <description>
           
@@ -243,6 +232,17 @@ Cool tech to bring the sci-fi concept film Sight one step closer to reality&amp;
         <pubDate>Tue, 30 Apr 2013 12:44:58 -0700</pubDate>
         <link>./2013-04-30-augmented-reality-in-a-contact-lens-ieee-spectrum/</link>
         <guid isPermaLink="true">./2013-04-30-augmented-reality-in-a-contact-lens-ieee-spectrum/</guid>
+      </item>
+    
+      <item>
+        <title>STEAM: A Framework for Teaching Across the Disciplines</title>
+        <description>
+          
+          STEAM: A Framework for Teaching Across the DisciplinesDespite the throwback website, we need this&amp;#8212;check out the video! The way few non-CSE departments at the U would touch STEM concepts and courses in CSE rarely touched non-STEM, was just wrong. STEM is what the world is made of, and Art can...
+        </description>
+        <pubDate>Tue, 30 Apr 2013 08:00:15 -0700</pubDate>
+        <link>./2013-04-30-steam-a-framework-for-teaching-across-the-disciplines/</link>
+        <guid isPermaLink="true">./2013-04-30-steam-a-framework-for-teaching-across-the-disciplines/</guid>
       </item>
     
   </channel>
