@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Harlan Time</title>
+
+  <meta name="author" content="Harlan Iverson" />
+  
+  
+  <meta name="description" content="Dev Journal">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Harlan Time - Harlan's Development Journal" href="/feed.xml" />
+
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    
+      
+  
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+    
+  
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+    
+  
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  <meta property="og:title" content="Harlan Time" />
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:url" content="./page7/" />
+  
+  
+  <meta property="og:image" content="./img/harlan.jpg" />
+  
+  
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@harlanji" />
+  <meta name="twitter:creator" content="@harlanji" />
+  <meta name="twitter:title" content="Harlan Time" />
+  <meta name="twitter:description" content="A good explanation of commons-logging, slf4j, and log4j. Posted on October 24, 2011 http://stackoverflow.com/questions/462566/logging-using-sl4j-jakarta-commons-logging-log4j-for-third-party-libraries-and Remember to not confuse slf4j-xxxx.jar with xxxx-over-slf4j.jar. The former is for funneling to your desired logging framework (log4j, logback, etc), the latter is to replace the used logging framework. – Spencer K [Read&amp;nbsp;More] Tags: java Spring..." />
+  
+  <meta name="twitter:image" content="./img/harlan.jpg" />
+  
+  
+</head>
+
+
+  <body>
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=".">Harlan Time</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Archive</a>
+            <div class="navlinks-children">
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2016">2016</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2014">2014</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2013">2013</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2012">2012</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2011">2011</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2010">2010</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2008">2008</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2007">2007</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2006">2006</a>
+
+                
+              
+                
+                  
+            
+
+
+
+
+
+<a href="/archive/2005">2005</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href=". ">
+	      <img class="avatar-img" src="/img/harlan.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>Harlan Time</h1>
+		  
+		    
+            <hr class="small">
+            <span class="page-subheading">Dev Journal</span>
+			
+		  
+		  
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="posts-list">
+  
+  <article class="post-preview">
+    <a href="/2011-10-24-a-good-explanation-of-commons-logging-slf4j-and/">
+	  <h2 class="post-title">A good explanation of commons-logging, slf4j, and log4j.</h2>
+
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on October 24, 2011
+    </p>
+
+    <div class="post-entry">
+      http://stackoverflow.com/questions/462566/logging-using-sl4j-jakarta-commons-logging-log4j-for-third-party-libraries-and
+
+Remember to not confuse slf4j-xxxx.jar with xxxx-over-slf4j.jar. The former is for funneling to your desired logging framework (log4j, logback, etc), the latter is to replace the used logging framework. – Spencer K
+
+
+	  <a href="/2011-10-24-a-good-explanation-of-commons-logging-slf4j-and/" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+    
+    <div class="blog-tags">
+      Tags: 
+      
+        java
+      
+    </div>
+    
+
+   </article>
+  
+  <article class="post-preview">
+    <a href="/2011-10-24-spring-3-x-factorybean/">
+	  <h2 class="post-title">Spring 3.x FactoryBean</h2>
+
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on October 24, 2011
+    </p>
+
+    <div class="post-entry">
+      http://static.springsource.org/spring/docs/current/spring-framework-reference/html/beans.html When you need to ask a container for an actual FactoryBean instance itself, not the bean it produces, you preface the bean id with the ampersand symbol&amp;amp; (without quotes) when calling the getBean() method of the ApplicationContext. So for a given FactoryBean with an id of myBean, invokinggetBean(&quot;myBean&quot;) on the container returns the product of the FactoryBean, and invoking getBean(&quot;&amp;amp;myBean&quot;) returns the FactoryBean instance...
+	  <a href="/2011-10-24-spring-3-x-factorybean/" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+    
+    <div class="blog-tags">
+      Tags: 
+      
+        java, spring
+      
+    </div>
+    
+
+   </article>
+  
+  <article class="post-preview">
+    <a href="/2011-06-15-hello-world-2-0/">
+	  <h2 class="post-title">Hello World 2.0</h2>
+
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on June 15, 2011
+    </p>
+
+    <div class="post-entry">
+      Hello World 2.0 Hello again. I&#39;m back in the real world with a shiny new Computer Science degree, after three grueling years of hard work. I&#39;ve relocated to the SF Bay Area from Minneapolis in search of greener pastures. I accepted a position with a startup, Emota.net, and am now...
+	  <a href="/2011-06-15-hello-world-2-0/" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+    
+
+   </article>
+  
+  <article class="post-preview">
+    <a href="/2010-08-29-creating-a-javascript-library-with-maven/">
+	  <h2 class="post-title">Creating a Javascript Library with Maven</h2>
+
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on August 29, 2010
+    </p>
+
+    <div class="post-entry">
+      Creating a Javascript Library with Maven A Javascript library consists of some Javascript files, and potentially some resources like images, templates, and stylesheets. In Maven, these are arranged in the following directory structure:my-library/. pom.xml. src/. main/. javascript/. resources/. test/. javascript/. resources/The one item that might require some explanation is pom.xml....
+	  <a href="/2010-08-29-creating-a-javascript-library-with-maven/" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+    
+
+   </article>
+  
+  <article class="post-preview">
+    <a href="/2010-08-28-javascript-maven-plugin-revamped/">
+	  <h2 class="post-title">Javascript Maven Plugin Revamped</h2>
+
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on August 28, 2010
+    </p>
+
+    <div class="post-entry">
+      Javascript Maven Plugin Revamped In the process of researching for the Engineering Better Javascript series, I ended up implementing some of my ideas to make them concrete. I&#39;ve extended the existing Javascript Maven Tools to include a QUnit plugin and report integration, as well as added some integration tests to...
+	  <a href="/2010-08-28-javascript-maven-plugin-revamped/" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+    
+
+   </article>
+  
+  <article class="post-preview">
+    <a href="/2010-08-13-benefits-of-a-repository-manager/">
+	  <h2 class="post-title">Benefits of a Repository Manager</h2>
+
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on August 13, 2010
+    </p>
+
+    <div class="post-entry">
+      Benefits of a Repository Manager On the same day I started this series, Tim O&#39;Brien at Sonatype started a series describing the benefits of using a repository manager and saved me a little work ;). He essentially replaced the piece that I&#39;ve been working on this past week, but he...
+	  <a href="/2010-08-13-benefits-of-a-repository-manager/" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+    
+
+   </article>
+  
+  <article class="post-preview">
+    <a href="/2010-08-04-engineering-better-javascript/">
+	  <h2 class="post-title">Engineering Better Javascript</h2>
+
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on August 4, 2010
+    </p>
+
+    <div class="post-entry">
+      Engineering Better Javascript This is the first in a series of articles exploring a divergent idea for engineering better Javascript using ideas from the Maven build system.Just a few years ago Javascript became used extensibly enough to warrant automated builds. It went from a language which was embedded sparingly in...
+	  <a href="/2010-08-04-engineering-better-javascript/" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+    
+
+   </article>
+  
+  <article class="post-preview">
+    <a href="/2008-07-01-more-thoughts-on-maven-loader/">
+	  <h2 class="post-title">More Thoughts on Maven Loader</h2>
+
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on July 1, 2008
+    </p>
+
+    <div class="post-entry">
+      More Thoughts on Maven Loader Continuing the train of thought I started laying out last night, I have some more details about the MavenLoader client module.The Maven JS Plugin could generate a Javascript file or replace a token in HTML files in war projects that sets up the MavenLoader in...
+	  <a href="/2008-07-01-more-thoughts-on-maven-loader/" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+    
+
+   </article>
+  
+  <article class="post-preview">
+    <a href="/2008-06-30-javascript-dependency-system-using-maven-yui-loader/">
+	  <h2 class="post-title">Javascript Dependency System using Maven + YUI Loader</h2>
+
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on June 30, 2008
+    </p>
+
+    <div class="post-entry">
+      Javascript Dependency System using Maven + YUI Loader I started thinking a while back about how to create a repository of Javascript libraries / applications using Maven for decentralized transitive dependency management. The progression of things that has led to these thoughts are Maven, Maven JS Tools (feature request), Google...
+	  <a href="/2008-06-30-javascript-dependency-system-using-maven-yui-loader/" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+    
+
+   </article>
+  
+  <article class="post-preview">
+    <a href="/2008-05-18-observations-of-doxia-menu-inheritance/">
+	  <h2 class="post-title">Observations of Doxia Menu Inheritance</h2>
+
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on May 18, 2008
+    </p>
+
+    <div class="post-entry">
+      Observations of Doxia Menu Inheritance I couldn&#39;t find much/any documentation on inheriting menus from a Super POM using Doxia + Maven 2. Here is a quick overview of what I think I have learned using a small reference example to illustrate.Project Layoutsuperproject|+- src/site/site.xml|\- module1 | \- src/site/site.xmlSuper Module site.xml Content&amp;lt;?xml...
+	  <a href="/2008-05-18-observations-of-doxia-menu-inheritance/" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+    
+
+   </article>
+  
+</div>
+
+
+<ul class="pager main-pager">
+  
+  <li class="previous">
+    <a href="/page6">&larr; Newer Posts</a>
+  </li>
+  
+  
+  <li class="next">
+    <a href="/page8">Older Posts &rarr;</a>
+  </li>
+  
+</ul>
+
+
+	    
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="https://github.com/harlanji" title="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://twitter.com/harlanji" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="mailto:h.iverson@gmail.com" title="Email me">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+          <li>
+            <a href="https://linkedin.com/in/harlanji" title="LinkedIn">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+		  
+		  
+      
+          <li>
+            <a href="https://www.instagram.com/harlanji" title="Instagram">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+      
+		  
+		  <li>
+			<a href="/feed.xml" title="RSS">
+			  <span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+			  </span>
+			</a>
+		  </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+		  Harlan Iverson
+		  &nbsp;&bull;&nbsp;
+		  2016
+
+		  
+		  &nbsp;&bull;&nbsp;
+		  <a href=".">AnalogZen.com</a>
+		  
+	    </p>
+	        <!-- Please don't remove this, keep my open source work credited :) -->
+		<p class="theme-by text-muted">
+		  Theme by
+		  <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+		</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>

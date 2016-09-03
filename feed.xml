@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Harlan Time</title>
+    <description>Harlan&#39;s Development Journal</description>
+    <link>.</link>
+    <atom:link href="./feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Cool Stuff, 2015-2016 Q3 Edition</title>
+        <description>
+          
+          It’s been a couple of years since I’ve written an update. I get very focused. So what have I been focusing on? In future posts I’ll dig deeper back in my notes and commit logs to see what I was doing. For now I’ll focus on what’s in memory, which...
+        </description>
+        <pubDate>Mon, 29 Aug 2016 16:59:59 -0700</pubDate>
+        <link>./2016-08-29-hello-hello/</link>
+        <guid isPermaLink="true">./2016-08-29-hello-hello/</guid>
+      </item>
+    
+      <item>
+        <title>GnuPG</title>
+        <description>
+          
+          Maybe you’ve heard of GPG, or is it PGP? You’ve probably heard a little more about NSA leaks and put the sloppy password management at work to the back of your mind. Your home password situation is probably not much better. How many passwords do you use for all your...
+        </description>
+        <pubDate>Mon, 01 Sep 2014 11:19:00 -0700</pubDate>
+        <link>./2014-09-01-gnupg/</link>
+        <guid isPermaLink="true">./2014-09-01-gnupg/</guid>
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>
+          
+          You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve --watch, which launches a web server and auto-regenerates your site...
+        </description>
+        <pubDate>Sun, 31 Aug 2014 10:57:53 -0700</pubDate>
+        <link>./2014-08-31-welcome-to-jekyll/</link>
+        <guid isPermaLink="true">./2014-08-31-welcome-to-jekyll/</guid>
+      </item>
+    
+      <item>
+        <title>My first post.</title>
+        <description>
+          
+          Hello, Jekyll blogging. Now it’s time to figure out how to get the blogger posts imported.
+
+        </description>
+        <pubDate>Sun, 31 Aug 2014 10:57:53 -0700</pubDate>
+        <link>./2014-08-31-my-first-post/</link>
+        <guid isPermaLink="true">./2014-08-31-my-first-post/</guid>
+      </item>
+    
+      <item>
+        <title>Analog Zen - Harlan Iverson&#39;s Programmer Portfolio</title>
+        <description>
+          
+          Analog Zen - Harlan Iverson&#39;s Programmer PortfolioI rebuilt my portfolio website using the latest Angular + Bootstrap3 seed project. It was previously written in a pre-1.0 version of Ember + Bootstrap2. I&amp;#8217;ll be adding more demos, code samples, and project descriptions this week.
+
+        </description>
+        <pubDate>Wed, 13 Nov 2013 11:19:26 -0800</pubDate>
+        <link>./2013-11-13-analog-zen-harlan-iversons-programmer-portfolio/</link>
+        <guid isPermaLink="true">./2013-11-13-analog-zen-harlan-iversons-programmer-portfolio/</guid>
+      </item>
+    
+      <item>
+        <title>To carousel or not to carousel?</title>
+        <description>
+          
+          To carousel or not to carousel?I think this is a good discussion of website carousels and their types and uses, and good practices for each: While About pages are extremely important, I’m afraid they don’t belong in any sort of carousel – so you can forget that. Remember that each...
+        </description>
+        <pubDate>Tue, 25 Jun 2013 15:20:00 -0700</pubDate>
+        <link>./2013-06-25-to-carousel-or-not-to-carousel/</link>
+        <guid isPermaLink="true">./2013-06-25-to-carousel-or-not-to-carousel/</guid>
+      </item>
+    
+      <item>
+        <title>nature made a nice jump on my old street stay</title>
+        <description>
+          
+          Nature made a nice jump on my old street. Stay safe.
+
+        </description>
+        <pubDate>Sat, 22 Jun 2013 13:51:56 -0700</pubDate>
+        <link>./2013-06-22-nature-made-a-nice-jump-on-my-old-street-stay/</link>
+        <guid isPermaLink="true">./2013-06-22-nature-made-a-nice-jump-on-my-old-street-stay/</guid>
+      </item>
+    
+      <item>
+        <title>twins vs white sox at target field</title>
+        <description>
+          
+          Twins vs. White Sox (at Target Field)
+
+        </description>
+        <pubDate>Thu, 20 Jun 2013 16:59:20 -0700</pubDate>
+        <link>./2013-06-20-twins-vs-white-sox-at-target-field/</link>
+        <guid isPermaLink="true">./2013-06-20-twins-vs-white-sox-at-target-field/</guid>
+      </item>
+    
+      <item>
+        <title>sunset at lake nokomis</title>
+        <description>
+          
+          Sunset (at Lake Nokomis)
+
+        </description>
+        <pubDate>Tue, 18 Jun 2013 19:40:50 -0700</pubDate>
+        <link>./2013-06-18-sunset-at-lake-nokomis/</link>
+        <guid isPermaLink="true">./2013-06-18-sunset-at-lake-nokomis/</guid>
+      </item>
+    
+      <item>
+        <title>Preserving TypeScript/CoffeeScript Source Map through UglifyJS.</title>
+        <description>
+          
+          Preserving TypeScript/CoffeeScript Source Map through UglifyJS.I was pleased to see that UglifyJS can transform the source map from TypeScript through to the Optimized JS: --in-source-map Input source map, useful if you&#39;re compressing JS that was generated from some other original code. The motivator was that I am getting ready to...
+        </description>
+        <pubDate>Fri, 24 May 2013 09:30:20 -0700</pubDate>
+        <link>./2013-05-24-preserving-typescript-coffeescript-source-map-through/</link>
+        <guid isPermaLink="true">./2013-05-24-preserving-typescript-coffeescript-source-map-through/</guid>
+      </item>
+    
+      <item>
+        <title></title>
+        <description>
+          
+          
+
+        </description>
+        <pubDate>Thu, 23 May 2013 18:11:21 -0700</pubDate>
+        <link>./2013-05-23-/</link>
+        <guid isPermaLink="true">./2013-05-23-/</guid>
+      </item>
+    
+      <item>
+        <title>How to handle EmberJS actions with a nested VIew, rather than the parent Route.</title>
+        <description>
+          
+          How to handle EmberJS actions with a nested VIew, rather than the parent Route.This isn&amp;#8217;t hard or hacky, just confusing to a n00b. Views and Routes have events added to them differently, but the real trick is that actions don&amp;#8217;t seem to hit the view from whom&amp;#8217;s template they originated....
+        </description>
+        <pubDate>Thu, 23 May 2013 09:30:17 -0700</pubDate>
+        <link>./2013-05-23-how-to-handle-emberjs-actions-with-a-nested-view/</link>
+        <guid isPermaLink="true">./2013-05-23-how-to-handle-emberjs-actions-with-a-nested-view/</guid>
+      </item>
+    
+      <item>
+        <title>How to allow non-root users to control Upstart services, without a sudo password prompt.</title>
+        <description>
+          
+          How to allow non-root users to control Upstart services, without a sudo password prompt.The snippet that I&amp;#8217;m using is here, but this will apply to running any privileged command without a password: youruser ALL = (root) NOPASSWD: /sbin/start yourservice, /sbin/stop yourservice, /sbin/restart yourservice I did not previously know that sudoers allowed rules at...
+        </description>
+        <pubDate>Wed, 22 May 2013 08:50:00 -0700</pubDate>
+        <link>./2013-05-22-how-to-allow-non-root-users-to-control-upstart/</link>
+        <guid isPermaLink="true">./2013-05-22-how-to-allow-non-root-users-to-control-upstart/</guid>
+      </item>
+    
+      <item>
+        <title>Auto re-compiling/re-launching NodeTS setup</title>
+        <description>
+          
+          These are my steps that I&amp;#8217;ve derived; if you have a better way, please let me know. d: dev box, s: server box: s: install NodeJS (via NVM), and &amp;#8216;screen&amp;#8217; s: create an empty directory: /path/to/app. s: npm install -g nodemon typescript d: create server.ts with simple &amp;#8220;hello world&amp;#8221; code...
+        </description>
+        <pubDate>Mon, 20 May 2013 13:05:00 -0700</pubDate>
+        <link>./2013-05-20-auto-re-compiling-re-launching-nodets-setup/</link>
+        <guid isPermaLink="true">./2013-05-20-auto-re-compiling-re-launching-nodets-setup/</guid>
+      </item>
+    
+      <item>
+        <title>UI and Presentation Skills++ with ImpressJS, Strut, and Prezi</title>
+        <description>
+          
+          These two tools are pretty awesome for simple developers like myself! 
+I feel empowered make some pretty fancy presentations and UI effects. Here are the best resources I found:
+nice summary of solutions: http://stackoverflow.com/questions/6283964/html-5-javascript-flowchart-tools-prezi-style
+motivational: http://usersknow.blogspot.com/2013/04/10-reasons-founders-should-learn-to.html
+ImpressJS: http://bartaz.github.io/impress.js
+Strut: (build ImpressJS HTML) http://tantaman.com/Strut/dist/index.html
+Prezi: http://prezi.com/
+
+
+        </description>
+        <pubDate>Fri, 17 May 2013 11:48:47 -0700</pubDate>
+        <link>./2013-05-17-ui-and-presentation-skills-with-impressjs-strut-and/</link>
+        <guid isPermaLink="true">./2013-05-17-ui-and-presentation-skills-with-impressjs-strut-and/</guid>
+      </item>
+    
+      <item>
+        <title>view from the u</title>
+        <description>
+          
+          View from the U.
+
+        </description>
+        <pubDate>Thu, 16 May 2013 13:36:04 -0700</pubDate>
+        <link>./2013-05-16-view-from-the-u/</link>
+        <guid isPermaLink="true">./2013-05-16-view-from-the-u/</guid>
+      </item>
+    
+      <item>
+        <title>map of nodejs things does something like this</title>
+        <description>
+          
+          Map of NodeJS Things
+Does something like this exist? If not, what format should I build it in so people can contribute?
+
+        </description>
+        <pubDate>Thu, 16 May 2013 11:49:34 -0700</pubDate>
+        <link>./2013-05-16-map-of-nodejs-things-does-something-like-this/</link>
+        <guid isPermaLink="true">./2013-05-16-map-of-nodejs-things-does-something-like-this/</guid>
+      </item>
+    
+      <item>
+        <title>The Lethality of Loneliness - The New Republic</title>
+        <description>
+          
+          The Lethality of Loneliness - The New RepublicFor the first time in history, we understand how isolation can ravage the body and brain. Now, what should we do about it? this is pretty fascinating. long read, but it offers a pretty fundamentally different view of a whole plethora of illness,...
+        </description>
+        <pubDate>Mon, 13 May 2013 13:15:51 -0700</pubDate>
+        <link>./2013-05-13-the-lethality-of-loneliness-the-new-republic/</link>
+        <guid isPermaLink="true">./2013-05-13-the-lethality-of-loneliness-the-new-republic/</guid>
+      </item>
+    
+      <item>
+        <title>Spreadsheet Powered Portfolio</title>
+        <description>
+          
+          For the past few weeks I have been updating my frontend web skills. While building an EmberJS+Bootstrap based portfolio, I came across TimelineJS which loads data from Google Spreadsheets! It was the first time I had seen such a trick, and naturally I wanted to figure out how it works....
+        </description>
+        <pubDate>Tue, 07 May 2013 14:48:00 -0700</pubDate>
+        <link>./2013-05-07-spreadsheet-powered-portfolio/</link>
+        <guid isPermaLink="true">./2013-05-07-spreadsheet-powered-portfolio/</guid>
+      </item>
+    
+      <item>
+        <title>Augmented Reality in a Contact Lens - IEEE Spectrum</title>
+        <description>
+          
+          Augmented Reality in a Contact Lens - IEEE SpectrumA new generation of contact lenses built with very small circuits and LEDs promises bionic eyesight
+Cool tech to bring the sci-fi concept film Sight one step closer to reality&amp;#8212;recommended viewing, about 8 minutes long!
+
+        </description>
+        <pubDate>Tue, 30 Apr 2013 12:44:58 -0700</pubDate>
+        <link>./2013-04-30-augmented-reality-in-a-contact-lens-ieee-spectrum/</link>
+        <guid isPermaLink="true">./2013-04-30-augmented-reality-in-a-contact-lens-ieee-spectrum/</guid>
+      </item>
+    
+  </channel>
+</rss>
